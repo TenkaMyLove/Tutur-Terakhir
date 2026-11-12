@@ -6,17 +6,23 @@
       "lines": [
         {
           "text_normal": "Sini, Nak, duduk di atas papan {w01|pelataran} depan rumah Nenek. Sore begini angin sungai selalu sejuk sampai ke depan pintu.",
-          "text_akamsi": "Sini, Nak, baduduk di atas papan {w01|pelataran} muka rumah Nini. Kamarian kaini angin sungai tarus nyaman sampai ka muka lawang.",
+          "text_akamsi": "Ai {w28|atung}, sudah datang jua. Sini baduduk di {w01|pelataran} — jangan basuh kaki di atas tikar, basahi di bawah tangga dulu.",
           "words": ["w01"],
+          "words_akamsi": ["w28", "w01"],
           "gesture": "point_down",
-          "highlightIcons": ["w01"]
+          "gesture_akamsi": "point_down",
+          "highlightIcons": ["w01"],
+          "highlightIcons_akamsi": ["w01", "w28"]
         },
         {
           "text_normal": "Maaf ya agak berantakan, Nenek kada sawat {w02|basasimpun} lagi.",
-          "text_akamsi": "Maaf lah agak bacaca, Nini hanyar tuntung {w02|basasimpun} supaya kursi wan mija di muka ini rapi sabalum ikam datang.",
+          "text_akamsi": "Nini panggil {w28|atung} haja maraga ikam anak kampung sini. Kursi di {w01|pelataran} ini sudah Nini usap, tagal masih ba’al dikit.",
           "words": ["w02"],
+          "words_akamsi": ["w28", "w01"],
           "gesture": "act",
-          "highlightIcons": ["w02"]
+          "gesture_akamsi": "happy",
+          "highlightIcons": ["w02"],
+          "highlightIcons_akamsi": ["w28"]
         }
       ]
     },
@@ -26,17 +32,23 @@
       "lines": [
         {
           "text_normal": "Dari {w01|pelataran} ini saja sudah tercium bau masakan dari dapur sebelah. Nenek tadi menaruh {w03|rinjing} bulat di atas tungku kayu.",
-          "text_akamsi": "Matan {w01|pelataran} ini haja sudah tacium bau masakan matan padu higa. Nini tadi maandak {w03|rinjing} bulat di atas tungku kayu.",
+          "text_akamsi": "Matan {w01|pelataran} ini, dengar bunyi air di {w21|gadur} higa tangga. Nini hanyar mandirisih piring di situ sabalum masuk padu.",
           "words": ["w01", "w03"],
+          "words_akamsi": ["w01", "w21"],
           "gesture": "point_left",
-          "highlightIcons": ["w03"]
+          "gesture_akamsi": "point_left",
+          "highlightIcons": ["w03"],
+          "highlightIcons_akamsi": ["w21"]
         },
         {
           "text_normal": "Kalau minyak dan santan sudah mendesis di dalamnya, tangan Nenek harus terus {w04|maharu} pakai sendok kayu supaya kuahnya tidak gosong di dasar.",
-          "text_akamsi": "Amun minyak wan santan sudah badadas di dalamnya, tangan Nini harus tarus {w04|maharu} pakai sudu kayu supaya kuahnya kada hangus di bawah.",
+          "text_akamsi": "Di dalam padu, {w27|padaringan} masih ba’isi baras. Nini ambil saikit gasan nasi, lalu manyangga {w03|rinjing} di atas tungku.",
           "words": ["w04"],
+          "words_akamsi": ["w27", "w03"],
           "gesture": "act",
-          "highlightIcons": ["w04", "w03"]
+          "gesture_akamsi": "act",
+          "highlightIcons": ["w04", "w03"],
+          "highlightIcons_akamsi": ["w27", "w03"]
         }
       ]
     },
@@ -46,17 +58,23 @@
       "lines": [
         {
           "text_normal": "Sebelum menggoreng di {w03|rinjing} tadi, Nenek menyiapkan batu {w05|panai} untuk menghaluskan cabai, kunyit, dan bawang merah.",
-          "text_akamsi": "Sabalum manyanga di {w03|rinjing} tadi, Nini manyiapakan batu {w05|panai} gasan mahalusakan lombok, janar, wan bawang habang.",
+          "text_akamsi": "Sabalum minyak panas di {w03|rinjing}, Nini buka tutup {w27|padaringan} lagi — barasnya harus cukup gasan tamu malam.",
           "words": ["w03", "w05"],
+          "words_akamsi": ["w03", "w27"],
           "gesture": "point_left",
-          "highlightIcons": ["w05"]
+          "gesture_akamsi": "point_left",
+          "highlightIcons": ["w05"],
+          "highlightIcons_akamsi": ["w27", "w03"]
         },
         {
           "text_normal": "Bunyi batu {w05|panai} beradu saat Nenek {w06|mamirik} bumbu sampai lumat itulah yang paling bikin rindu, baru setelah itu kuahnya kita {w04|maharu} perlahan.",
-          "text_akamsi": "Bunyi batu {w05|panai} bahantup wayah Nini {w06|mamirik} bumbu sampai lumat ngitu nang paling maulah kaganangan, hanyar limbah itu kuahnya kita {w04|maharu} bagamat.",
+          "text_akamsi": "Lombok wan bawang di {w05|panai} Nini hantup bagamat. Bau bumbu naik — ikam cium jua dari sini, kada?",
           "words": ["w05", "w06", "w04"],
+          "words_akamsi": ["w05"],
           "gesture": "act",
-          "highlightIcons": ["w06", "w05"]
+          "gesture_akamsi": "act",
+          "highlightIcons": ["w06", "w05"],
+          "highlightIcons_akamsi": ["w05"]
         }
       ]
     },
@@ -66,17 +84,23 @@
       "lines": [
         {
           "text_normal": "Tangan Nenek pegal sehabis {w06|mamirik} cabai di {w05|panai}, jadi Nenek seduh teh hangat saja. Ini Nenek tuangkan dari {w07|cirat} ke gelasmu.",
-          "text_akamsi": "Tangan Nini kipa limbah {w06|mamirik} lombok di {w05|panai}, jadi Nini manyaduh tih hangat haja. Ini Nini tuang matan {w07|cirat} ka galas ikam.",
+          "text_akamsi": "Tangan Nini sudah {w26|uyuh} limbah mahalus di {w05|panai}. Ini, minum dulu — Nini tuang matan {w07|cirat}.",
           "words": ["w06", "w05", "w07"],
+          "words_akamsi": ["w26", "w05", "w07"],
           "gesture": "point_right",
-          "highlightIcons": ["w07"]
+          "gesture_akamsi": "tired",
+          "highlightIcons": ["w07"],
+          "highlightIcons_akamsi": ["w07", "w26"]
         },
         {
           "text_normal": "Nanti kalau kamu kemalaman dan menginap di kamar tamu, kasurnya sudah Nenek pasangi {w08|ulas tilam} bersih yang baru dicuci pagi tadi.",
-          "text_akamsi": "Kaina amun ikam kamalaman wan bamalam di kamar tamu, kasurnya sudah Nini pasangi {w08|ulas tilam} barasih nang hanyar dibasuh baisukan tadi.",
+          "text_akamsi": "Sisa air di {w21|gadur} Nini buang ka bawah rumah. {w07|cirat} ini biar di meja — amun dingin, Nini saduh lagi.",
           "words": ["w08"],
+          "words_akamsi": ["w21", "w07"],
           "gesture": "point_left",
-          "highlightIcons": ["w08"]
+          "gesture_akamsi": "point_down",
+          "highlightIcons": ["w08"],
+          "highlightIcons_akamsi": ["w21", "w07"]
         }
       ]
     },
@@ -86,17 +110,23 @@
       "lines": [
         {
           "text_normal": "Setelah menuang sisa teh dari {w07|cirat} dan menarik sudut {w08|ulas tilam} agar kasur rapi kencang, Nenek biasa {w02|basasimpun} sebelum petang tiba.",
-          "text_akamsi": "Limbah manuang sisa tih matan {w07|cirat} wan manarik buncu {w08|ulas tilam} supaya kasur rapi kancang, Nini biasa {w02|basasimpun} sabalum sanja datang.",
+          "text_akamsi": "Nini {w22|hawas} ka pohon higa. Ada {w23|warik} di dahan atas — diam-diam maambil rambutan jiran.",
           "words": ["w07", "w08", "w02"],
+          "words_akamsi": ["w22", "w23"],
           "gesture": "act",
-          "highlightIcons": ["w02"]
+          "gesture_akamsi": "point_right",
+          "highlightIcons": ["w02"],
+          "highlightIcons_akamsi": ["w23", "w22"]
         },
         {
           "text_normal": "Pagi tadi Nenek mengenakan {w09|tapih} bermotif bunga yang dililitkan di pinggang, lalu pergi ke pasar terapung untuk {w10|nukar} bahan masakan dengan uang receh.",
-          "text_akamsi": "Baisukan tadi Nini mamakai {w09|tapih} bakambang nang dililit di pinggang, lalu tulak ka pasar tarapung gasan {w10|nukar} bahan masakan wan duit ricih.",
+          "text_akamsi": "Baisukan Nini mamakai {w09|tapih} bakambang ini. {w22|hawas} baik-baik — {w23|warik} ngitu rancak turun amun ada urang di bawah.",
           "words": ["w09", "w10"],
+          "words_akamsi": ["w09", "w22", "w23"],
           "gesture": "point_down",
-          "highlightIcons": ["w09", "w10"]
+          "gesture_akamsi": "point_down",
+          "highlightIcons": ["w09", "w10"],
+          "highlightIcons_akamsi": ["w09", "w23"]
         }
       ]
     },
@@ -106,17 +136,23 @@
       "lines": [
         {
           "text_normal": "Waktu mau {w10|nukar} sayur tadi, halaman masih basah oleh embun di ujung {w11|sabat} hijau yang tumbuh tinggi di tepi jalan.",
-          "text_akamsi": "Wayah handak {w10|nukar} lalap tadi, halaman masih ba’al ulih ambun di hujung {w11|sabat} hijau nang tumbuh tinggi di pinggir jalan.",
+          "text_akamsi": "Halaman masih ba’al ulih {w29|ambun}. Nini {w22|hawas} ka sungai — jukung sudah marapat bawa iwak.",
           "words": ["w10", "w11"],
+          "words_akamsi": ["w29", "w22"],
           "gesture": "point_right",
-          "highlightIcons": ["w11"]
+          "gesture_akamsi": "point_right",
+          "highlightIcons": ["w11"],
+          "highlightIcons_akamsi": ["w29", "w22"]
         },
         {
           "text_normal": "Di tepi sungai, tetangga baru menambatkan perahu kayunya. Di dalamnya ada seekor ikan {w13|haruan} besar; Nenek segera mengambil {w12|lading} tajam dari dapur untuk membersihkan sisiknya.",
-          "text_akamsi": "Di pinggir sungai, jiran hanyar manambat parahu kayunya. Di dalamnya ada saikung iwak {w13|haruan} ganal; Nini lakas maambil {w12|lading} landap matan padu gasan mambarasihi sisiknya.",
+          "text_akamsi": "Di dalam jukung ada {w13|haruan} ganal. {w23|warik} di pohon panasaran jua, tagal jangan diumpati — iwak ini gasan kuah.",
           "words": ["w13", "w12"],
+          "words_akamsi": ["w13", "w23"],
           "gesture": "point_left",
-          "highlightIcons": ["w12", "w13"]
+          "gesture_akamsi": "point_left",
+          "highlightIcons": ["w12", "w13"],
+          "highlightIcons_akamsi": ["w13"]
         }
       ]
     },
@@ -126,17 +162,23 @@
       "lines": [
         {
           "text_normal": "Sambil memangkas {w11|sabat} liar di dekat pagar, Nenek ingat dulu ikan {w13|haruan} segar selalu langsung disiangi memakai {w12|lading} di atas talenan kayu sebelum matahari terbenam.",
-          "text_akamsi": "Sambil manabas {w11|sabat} liar di higa pagar, Nini ingat bahari iwak {w13|haruan} sigar tarus langsung disiangi mamakai {w12|lading} di atas talanan kayu sabalum matahari tinggalam.",
+          "text_akamsi": "Limbah manyiangi {w13|haruan}, bahu Nini {w26|uyuh}. {w29|ambun} di daun sudah baubah dingin.",
           "words": ["w11", "w13", "w12"],
+          "words_akamsi": ["w13", "w26", "w29"],
           "gesture": "act",
-          "highlightIcons": ["w12", "w13"]
+          "gesture_akamsi": "tired",
+          "highlightIcons": ["w12", "w13"],
+          "highlightIcons_akamsi": ["w26", "w29"]
         },
         {
           "text_normal": "Nenek sering duduk di sini {w19|mahadang} perahu terakhir merapat, menatap ke ujung sungai sampai langit berubah {w14|kadap} dan lampu pelita harus dinyalakan.",
-          "text_akamsi": "Nini rancak baduduk di sini {w19|mahadang} jukung pandudian marapat, manatap ka hujung sungai sampai langit baubah {w14|kadap} wan lampu palita harus disulat.",
+          "text_akamsi": "Langit sudah {w30|salau}. Jangan buru-buru pulang — sabar sedikit, palita belum disulut.",
           "words": ["w19", "w14"],
+          "words_akamsi": ["w30"],
           "gesture": "tired",
-          "highlightIcons": ["w19", "w14"]
+          "gesture_akamsi": "point_right",
+          "highlightIcons": ["w19", "w14"],
+          "highlightIcons_akamsi": ["w30"]
         }
       ]
     },
@@ -146,17 +188,23 @@
       "lines": [
         {
           "text_normal": "Lihat bingkai foto di dinding itu. Di sebelah Nenek yang memakai {w09|tapih} batik adalah {w15|kai}, suami Nenek yang dulu rajin mengayuh perahu.",
-          "text_akamsi": "Itihi pigura gambar di tawing ngitu. Di higa Nini nang mamakai {w09|tapih} batik ngitu adalah {w15|kai}, laki Nini nang bahari cangkal mangayuh jukung.",
+          "text_akamsi": "Itihi pigura di tawing. Nini di situ mamakai {w09|tapih} sama lawan {w15|kai}. Di higanya {w24|julak} — kakaknya uma Nini bahari.",
           "words": ["w09", "w15"],
+          "words_akamsi": ["w09", "w15", "w24"],
           "gesture": "point_left",
-          "highlightIcons": ["w15", "w09"]
+          "gesture_akamsi": "point_left",
+          "highlightIcons": ["w15", "w09"],
+          "highlightIcons_akamsi": ["w15", "w24", "w09"]
         },
         {
           "text_normal": "Di sampingnya ada {w16|acil}, adik perempuan ibu Nenek, yang selalu bikin semua anak-anak {w20|himung} tersenyum lebar karena ia sering membawakan kue manis.",
-          "text_akamsi": "Di higanya ada {w16|acil}, ading bini uma Nini, nang tarus maulah barataan kakanakan {w20|himung} takurihing libar maraga sidin rancak mambawakan wadai manis.",
+          "text_akamsi": "Yang takurihing di pojok adalah {w16|acil}. Samunyaan {w25|dingsanak} itu maulah Nini {w20|himung} amun basuah lagi.",
           "words": ["w16", "w20"],
+          "words_akamsi": ["w16", "w25", "w20"],
           "gesture": "happy",
-          "highlightIcons": ["w16", "w20"]
+          "gesture_akamsi": "happy",
+          "highlightIcons": ["w16", "w20"],
+          "highlightIcons_akamsi": ["w16", "w25", "w20"]
         }
       ]
     },
@@ -166,17 +214,23 @@
       "lines": [
         {
           "text_normal": "Semua cerita tentang {w15|kai} dan {w16|acil} itu adalah bagian dari masa {w17|bahari}, puluhan tahun silam ketika kampung ini masih ramai suara anak mengaji.",
-          "text_akamsi": "Samunyaan kisah tantang {w15|kai} wan {w16|acil} ngitu palihan matan wayah {w17|bahari}, puluhan tahun lalu wayah kampung ini masih rami suara kakanakan mangaji.",
+          "text_akamsi": "Kisah {w15|kai}, {w16|acil}, wan {w24|julak} ngitu matan wayah {w17|bahari}. {w25|dingsanak} masih bakumpul di {w01|pelataran} ini.",
           "words": ["w15", "w16", "w17"],
+          "words_akamsi": ["w15", "w16", "w24", "w17", "w25", "w01"],
           "gesture": "idle",
-          "highlightIcons": ["w17"]
+          "gesture_akamsi": "idle",
+          "highlightIcons": ["w17"],
+          "highlightIcons_akamsi": ["w17", "w24", "w25"]
         },
         {
           "text_normal": "Sekarang rumah ini sunyi, menyisakan rasa {w18|karindangan} yang dalam di dada Nenek setiap kali memandang jalan setapak yang kosong.",
-          "text_akamsi": "Wayahini rumah ini hinip, manyisaakan rasa {w18|karindangan} nang dalam di dada Nini saban kali manatap jalan satapak nang puang.",
+          "text_akamsi": "Wayahini sepi. Tagal amun ada anak kampung datang, rasa {w17|bahari} itu hidup lagi di hati Nini.",
           "words": ["w18"],
+          "words_akamsi": ["w17"],
           "gesture": "tired",
-          "highlightIcons": ["w18"]
+          "gesture_akamsi": "tired",
+          "highlightIcons": ["w18"],
+          "highlightIcons_akamsi": ["w17"]
         }
       ]
     },
@@ -186,17 +240,23 @@
       "lines": [
         {
           "text_normal": "Sebentar lagi langit benar-benar {w14|kadap}. Tapi sebelum malam tiba, Nenek masih {w19|mahadang} anak-anak desa datang berkumpul ke mari.",
-          "text_akamsi": "Sapandang lagi langit bujur-bujur {w14|kadap}. Tagal sabalum malam datang, Nini masih {w19|mahadang} kakanakan kampung datang bakumpul ka mari.",
+          "text_akamsi": "Langit makin {w30|salau}. Nini masih mahadang di sini, {w28|atung} — jangan sampai bahasa kita hilang basamaan malam.",
           "words": ["w14", "w19"],
+          "words_akamsi": ["w30", "w28"],
           "gesture": "point_right",
-          "highlightIcons": ["w14", "w19"]
+          "gesture_akamsi": "point_right",
+          "highlightIcons": ["w14", "w19"],
+          "highlightIcons_akamsi": ["w30", "w28"]
         },
         {
           "text_normal": "Catatanmu tentang kata-kata masa {w17|bahari} mengobati {w18|karindangan} di hati ini. Nenek {w20|himung} sekali karena bahasa kita tidak ikut hilang bersama senja.",
-          "text_akamsi": "Catatan ikam tantang kata-kata wayah {w17|bahari} maubati {w18|karindangan} di hati ini. Nini {w20|himung} banar maraga bahasa kita kada umpat hilang basamaan sanja.",
+          "text_akamsi": "Catatan ikam gasan kata {w17|bahari} maulah Nini {w20|himung}. Sampai jumpa di {w30|salau} yang sama, Nak.",
           "words": ["w17", "w18", "w20"],
+          "words_akamsi": ["w17", "w20", "w30"],
           "gesture": "happy",
-          "highlightIcons": ["w20", "w18"]
+          "gesture_akamsi": "happy",
+          "highlightIcons": ["w20", "w18"],
+          "highlightIcons_akamsi": ["w20", "w30"]
         }
       ]
     }

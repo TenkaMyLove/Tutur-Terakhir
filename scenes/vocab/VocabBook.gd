@@ -53,7 +53,9 @@ func close() -> void:
 func refresh() -> void:
 	_list.clear()
 	var ids: Array = []
-	for wid in GameData.word_ids:
+	for wid in GameData.get_word_ids_for_mode(GameState.mode_id):
+		if not GameState.vocab.has(wid):
+			continue
 		var st: int = GameState.vocab[wid]["status"]
 		if st == GameState.WordStatus.UNDISCOVERED:
 			continue

@@ -138,5 +138,127 @@
       "q_feel": "Ringan sekali di dada, seakan segala lelah sore ini terbayar lunas.",
       "q_who": "Perasaan Nenek saat bahasa ini berhasil kamu catat."
     }
+  },
+  "answers_akamsi": {
+    "w01": {
+      "q_use": "Nenek menepuk lantai papan di depan pintu — di situlah kursi dan tikar digelar.",
+      "q_show": "Lihat tangan Nenek yang menunjuk ke lantai kayu di muka rumah, bukan ke dalam kamar.",
+      "q_feel": "Angin sungai terasa paling jelas di tempat terbuka itu.",
+      "q_who": "Bagian depan rumah, sebelum anak tangga menuju halaman."
+    },
+    "w03": {
+      "q_use": "Nenek mengangkat wadah logam bulat di atas tungku — di situlah minyak mulai mendesis.",
+      "q_show": "Ikon hitam cekung di dapur itu; Nenek menepuk sisinya pelan.",
+      "q_feel": "Bau hangat naik begitu benda itu disentuh api.",
+      "q_who": "Di atas perapian dapur sebelah."
+    },
+    "w05": {
+      "q_use": "Nenek menekan batu bundar berulang — bunyinya beradu dengan ulekan.",
+      "q_show": "Lihat gestur tangan memutar di atas wadah batu di meja dapur.",
+      "q_feel": "Getar di pergelangan Nenek terasa setelah lama mengerjakan itu.",
+      "q_who": "Di meja dapur, selalu berpasangan dengan ulekannya."
+    },
+    "w07": {
+      "q_use": "Nenek memiringkan wadah bercerat panjang ke arah gelasmu.",
+      "q_show": "Corong panjang di meja itu — Nenek mengangkatnya setinggi dada.",
+      "q_feel": "Uap hangat naik saat benda itu didekatkan ke gelas.",
+      "q_who": "Di atas meja teras, di samping cangkir."
+    },
+    "w09": {
+      "q_use": "Nenek menarik kain di pinggangnya — motifnya terlihat saat berdiri.",
+      "q_show": "Lihat kain yang dililit di tubuh bagian bawah Nenek, bukan selendang di kepala.",
+      "q_feel": "Kain itu bergerak pelan saat Nenek berbalik ke foto dinding.",
+      "q_who": "Dipakai Nenek sejak pagi, tampak jelas di potret lama."
+    },
+    "w13": {
+      "q_use": "Nenek menunjuk isi jukung — tubuh licin memanjang di antara anyaman.",
+      "q_show": "Gestur ke arah perahu; ikon binatang air ikut tersorot.",
+      "q_feel": "Nenek mengusap tangan seolah baru selesai membersihkannya.",
+      "q_who": "Dari sungai, baru saja dibawa ke pelataran."
+    },
+    "w15": {
+      "q_use": "Nenek menunjuk pria di bingkai foto di samping dirinya yang memakai tapih.",
+      "q_show": "Jari Nenek diam di wajah lelaki berpeci dalam pigura itu.",
+      "q_feel": "Suara Nenek melembut saat menatap foto itu lama.",
+      "q_who": "Orang di foto dinding, di sebelah Nenek muda."
+    },
+    "w16": {
+      "q_use": "Nenek menggeser jari ke wanita tersenyum di pojok foto keluarga.",
+      "q_show": "Lihat gestur ke arah sosok perempuan di bingkai, bukan ke pria di tengah.",
+      "q_feel": "Nenek hampir tersenyum sendiri mengingat kehadirannya.",
+      "q_who": "Wanita di foto, di samping keluarga inti."
+    },
+    "w17": {
+      "q_use": "Nenek menatap jauh melewati jalan setapak, seolah memutar waktu mundur.",
+      "q_show": "Gestur tangan membuka ke udara kosong — bukan ke benda di teras.",
+      "q_feel": "Ada jeda panjang sebelum Nenek melanjutkan kalimat.",
+      "q_who": "Bukan tempat di sini; masa yang sudah jauh di belakang."
+    },
+    "w20": {
+      "q_use": "Wajah Nenek mengembang; bahu naik ringan saat kata ini keluar.",
+      "q_show": "Perhatikan senyum dan mata yang berbinar — bukan gestur menunjuk benda.",
+      "q_feel": "Suasana di dada Nenek terasa lebih ringan setelah menyebutnya.",
+      "q_who": "Perasaan Nenek saat anak kampung datang dan kata tercatat."
+    },
+    "w21": {
+      "q_use": "Nenek menunjuk wadah lebar di samping tangga tempat air cucian tertampung.",
+      "q_show": "Lihat ikon wadah bundar itu; tangan Nenek menepuk tepinya.",
+      "q_feel": "Bunyi air bergoyang saat Nenek menggeser benda itu.",
+      "q_who": "Di samping tangga pelataran, bukan di dalam lemari."
+    },
+    "w22": {
+      "q_use": "Nenek menajamkan pandangan ke pohon atau sungai, alis sedikit naik.",
+      "q_show": "Gestur mata dan dagu mengarah jauh — ikon mata ikut menyala.",
+      "q_feel": "Nenek diam sejenak, hanya mengikuti arah pandangannya.",
+      "q_who": "Aksi Nenek terhadap sesuatu di kejauhan."
+    },
+    "w23": {
+      "q_use": "Nenek menunjuk dahan atas — ada yang bergerak di antara daun.",
+      "q_show": "Ikon binatang di pohon tersorot; Nenek mengangkat jari ke atas.",
+      "q_feel": "Nenek mendesis pelan, waspada agar yang di dahan tidak turun.",
+      "q_who": "Makhluk di pohon higa pelataran, bukan di sungai."
+    },
+    "w24": {
+      "q_use": "Nenek menunjuk orang tua laki-laki di foto — generasi di atas ayah/ibu.",
+      "q_show": "Jari berhenti di sosok berbeda dari kai; Nenek mengangguk pelan.",
+      "q_feel": "Nada suara hormat, seperti menyebut orang yang lebih tua dalam keluarga.",
+      "q_who": "Saudara orang tua di pigura dinding."
+    },
+    "w25": {
+      "q_use": "Nenek merentangkan tangan ke beberapa wajah di foto sekaligus.",
+      "q_show": "Gestur mencakup lebih dari satu orang — ikon dua sosok tersorot.",
+      "q_feel": "Ada kehangatan saat Nenek menyebut mereka bersama-sama.",
+      "q_who": "Orang-orang sedarah yang dulu berkumpul di pelataran."
+    },
+    "w26": {
+      "q_use": "Nenek mengusap dahi dan menurunkan bahu setelah bekerja.",
+      "q_show": "Lihat gestur lelah itu — bukan menunjuk benda, melainkan tubuh Nenek sendiri.",
+      "q_feel": "Napas Nenek lebih panjang; tangan sempat gemetar dikit.",
+      "q_who": "Keadaan Nenek setelah mencuci atau menyiangi."
+    },
+    "w27": {
+      "q_use": "Nenek membuka tutup peti kayu di sudut dapur lalu mengintip isinya.",
+      "q_show": "Ikon peti/wadah kayu tersorot; Nenek mengetuk tutupnya pelan.",
+      "q_feel": "Nenek mengangguk puas setelah memastikan isinya masih ada.",
+      "q_who": "Sudut dapur, tempat menyimpan bahan pokok beras."
+    },
+    "w28": {
+      "q_use": "Nenek mengulurkan tangan terbuka ke arahmu saat memanggil.",
+      "q_show": "Gestur sapaan lembut — bukan teguran, ikon panggilan tersorot.",
+      "q_feel": "Suara Nenek hangat, seperti memanggil cucu sendiri.",
+      "q_who": "Cara Nenek menyapa anak kampung yang datang."
+    },
+    "w29": {
+      "q_use": "Nenek menyentuh ujung daun yang basah di tepi halaman.",
+      "q_show": "Lihat titik-titik di daun; Nenek mengusap jari lalu menunjuk tanah basah.",
+      "q_feel": "Dingin tipis di ujung jari Nenek saat menyentuhnya.",
+      "q_who": "Di rumput dan daun halaman, bukan air di baskom."
+    },
+    "w30": {
+      "q_use": "Nenek menunjuk langit yang setengah gelap — pelita belum dinyalakan.",
+      "q_show": "Gestur ke udara senja; ikon langit remang tersorot.",
+      "q_feel": "Suasana jadi lebih sunyi; mata Nenek menyipit mencari cahaya.",
+      "q_who": "Keadaan langit dan halaman saat senja hampir malam."
+    }
   }
 }

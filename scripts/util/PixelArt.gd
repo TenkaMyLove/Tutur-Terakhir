@@ -52,87 +52,122 @@ static func _fill_ellipse(img: Image, cx: int, cy: int, rx: int, ry: int, color:
 
 
 static func nenek_frame(state: String, frame: int = 0) -> ImageTexture:
-	var body := Color("d4a07a")
-	var dress := Color("9a3a3a")
-	var hair := Color("2c1c18")
-	var kain := Color("c45a4a")
-	var accent := Color("f0c27a")
+	## Nenek Banjar: sanggul belakang, kebaya + tapih, tanpa collar/mahkota.
+	var skin := Color("c48a62")
+	var kebaya := Color("e8d2b8")
+	var tapih := Color("7a2e38")
+	var motif := Color("c47850")
+	var hair := Color("4a4038")
+	var hair_grey := Color("8a8478")
+	var selendang := Color("b85a48")
 	match state:
 		"happy", "correct":
-			dress = Color("b84848")
-			accent = Color("ffe29a")
+			tapih = Color("8e3844")
+			selendang = Color("d07060")
+			skin = Color("d09870")
 		"tired":
-			body = Color("b88870")
-			dress = Color("6e3030")
+			skin = Color("a87858")
+			kebaya = Color("d4c0a8")
+			tapih = Color("5a242c")
+			selendang = Color("8a4840")
 		"talk":
-			accent = Color("ffd27a")
-		"point_left", "point_right", "point_down", "act":
-			accent = Color("e8b86a")
-	var img := Image.create(72, 96, false, Image.FORMAT_RGBA8)
+			selendang = Color("c86858")
+	var img := Image.create(96, 128, false, Image.FORMAT_RGBA8)
 	img.fill(Color(0, 0, 0, 0))
-	# Ground shadow
-	_fill_ellipse(img, 36, 90, 18, 4, Color(0, 0, 0, 0.28))
-	# Mat under Nenek
-	_fill_rect(img, Rect2i(10, 78, 52, 8), Color("8a5a30"))
-	_fill_rect(img, Rect2i(12, 80, 48, 2), Color("a07040"))
-	# Skirt / tapih layers
-	_fill_rect(img, Rect2i(18, 48, 36, 32), dress)
-	_fill_rect(img, Rect2i(16, 52, 40, 6), kain.darkened(0.1))
-	_fill_rect(img, Rect2i(20, 62, 32, 3), accent.darkened(0.25))
-	# Torso kebaya
-	_fill_rect(img, Rect2i(22, 34, 28, 18), body.lightened(0.05))
-	_fill_rect(img, Rect2i(24, 36, 24, 4), kain)
-	# Head
-	_fill_ellipse(img, 36, 22, 12, 13, body.lightened(0.1))
-	# Hair bun + fringe
-	_fill_ellipse(img, 36, 12, 10, 8, hair)
-	_fill_rect(img, Rect2i(24, 14, 24, 6), hair)
-	# Eyes
-	var blink := frame % 10 == 9
+	var breath := 1 if (frame % 4) < 2 else 0
+	# Tikar + bayangan
+	_fill_ellipse(img, 48, 118, 22, 4, Color(0, 0, 0, 0.28))
+	_fill_rect(img, Rect2i(18, 102, 60, 10), Color("8a5a30"))
+	_fill_rect(img, Rect2i(20, 104, 56, 2), Color("a87840"))
+	# Tapih duduk (siluet lebih sempit, motif garis tipis)
+	_fill_ellipse(img, 48, 94, 24, 14, tapih.darkened(0.1))
+	_fill_rect(img, Rect2i(26, 70, 44, 30), tapih)
+	for i in 4:
+		_fill_rect(img, Rect2i(28, 74 + i * 6, 40, 1), motif.darkened(0.2))
+	# Kebaya
+	_fill_rect(img, Rect2i(32, 46 + breath, 32, 28), kebaya)
+	_fill_rect(img, Rect2i(34, 48 + breath, 28, 2), kebaya.lightened(0.08))
+	_fill_rect(img, Rect2i(46, 50 + breath, 3, 18), kebaya.darkened(0.08))
+	for i in 3:
+		_px(img, 47, 54 + breath + i * 5, Color("a05048"))
+	# Selendang tipis di satu bahu (bukan collar lebar)
+	_fill_rect(img, Rect2i(30, 46 + breath, 8, 22), selendang)
+	_fill_rect(img, Rect2i(28, 48 + breath, 6, 3), selendang.lightened(0.1))
+	_fill_rect(img, Rect2i(34, 66 + breath, 14, 3), selendang.darkened(0.05))
+	# Kepala
+	var hy := 28 + breath
+	_fill_ellipse(img, 48, hy + 2, 12, 13, skin)
+	# Rambut: samping + poni tipis + sanggul di BELAKANG (bukan mahkota di atas)
+	_fill_ellipse(img, 48, hy - 2, 13, 12, hair)
+	_fill_rect(img, Rect2i(36, hy - 6, 24, 5), hair_grey) # uban tipis di depan
+	_fill_rect(img, Rect2i(35, hy + 2, 5, 10), hair) # sisi kiri
+	_fill_rect(img, Rect2i(56, hy + 2, 5, 10), hair) # sisi kanan
+	_fill_ellipse(img, 62, hy + 2, 7, 7, hair_grey) # sanggul belakang-kanan
+	_fill_ellipse(img, 62, hy + 2, 4, 4, hair.lightened(0.15))
+	# Wajah di atas rambut sisi
+	_fill_ellipse(img, 48, hy + 3, 10, 11, skin)
+	_fill_ellipse(img, 42, hy + 5, 3, 2, skin.darkened(0.1))
+	_fill_ellipse(img, 54, hy + 5, 3, 2, skin.darkened(0.1))
+	_px(img, 48, hy + 5, skin.darkened(0.15))
+	_px(img, 48, hy + 6, skin.darkened(0.12))
+	# Mata kecil (bukan blok kohl lebar)
+	var blink := (frame % 10 == 9) or (state == "tired" and frame % 3 == 0)
+	_px(img, 43, hy + 1, hair.darkened(0.2))
+	_px(img, 44, hy + 1, hair.darkened(0.2))
+	_px(img, 52, hy + 1, hair.darkened(0.2))
+	_px(img, 53, hy + 1, hair.darkened(0.2))
 	if blink:
-		_fill_rect(img, Rect2i(30, 22, 4, 1), Color("2a1a18"))
-		_fill_rect(img, Rect2i(40, 22, 4, 1), Color("2a1a18"))
+		_fill_rect(img, Rect2i(42, hy + 4, 3, 1), Color("2a1a18"))
+		_fill_rect(img, Rect2i(51, hy + 4, 3, 1), Color("2a1a18"))
 	else:
-		_fill_rect(img, Rect2i(30, 20, 4, 3), Color("2a1a18"))
-		_fill_rect(img, Rect2i(40, 20, 4, 3), Color("2a1a18"))
-		_px(img, 31, 21, Color("f5e6d0"))
-		_px(img, 41, 21, Color("f5e6d0"))
-	# Mouth
+		var eye_y := hy + (3 if state == "tired" else 4)
+		_fill_rect(img, Rect2i(42, eye_y, 3, 2), Color("2a1a18"))
+		_fill_rect(img, Rect2i(51, eye_y, 3, 2), Color("2a1a18"))
+		_px(img, 43, eye_y, Color("f0e0d0"))
+		_px(img, 52, eye_y, Color("f0e0d0"))
+	# Mulut
 	match state:
-		"happy":
-			_fill_rect(img, Rect2i(33, 28, 8, 2), Color("8a4040"))
-			_px(img, 32, 27, Color("8a4040"))
-			_px(img, 41, 27, Color("8a4040"))
+		"happy", "correct":
+			_fill_rect(img, Rect2i(45, hy + 10, 6, 1), Color("8a4040"))
+			_px(img, 44, hy + 9, Color("8a4040"))
+			_px(img, 51, hy + 9, Color("8a4040"))
 		"tired":
-			_fill_rect(img, Rect2i(34, 28, 6, 1), Color("8a4040"))
+			_fill_rect(img, Rect2i(46, hy + 11, 4, 1), Color("7a3838"))
 		"talk":
-			_fill_rect(img, Rect2i(34, 27, 6, 3 if frame % 2 == 0 else 1), Color("8a4040"))
+			_fill_rect(img, Rect2i(46, hy + 9, 4, 2 if frame % 2 == 0 else 1), Color("8a4040"))
 		_:
-			_fill_rect(img, Rect2i(34, 28, 6, 1), Color("8a4040"))
-	# Arms / gesture
+			_fill_rect(img, Rect2i(46, hy + 10, 4, 1), Color("8a4040"))
+	# Lengan / gestur
 	match state:
 		"point_left":
-			_fill_rect(img, Rect2i(2, 40, 22, 5), body)
-			_fill_rect(img, Rect2i(1, 38, 5, 5), accent)
+			_fill_rect(img, Rect2i(8, 56, 24, 5), skin)
+			_fill_rect(img, Rect2i(5, 54, 6, 5), skin.lightened(0.05))
+			_fill_rect(img, Rect2i(4, 53, 2, 2), skin.lightened(0.1))
+			_fill_rect(img, Rect2i(62, 60, 10, 5), skin)
 		"point_right":
-			_fill_rect(img, Rect2i(48, 40, 22, 5), body)
-			_fill_rect(img, Rect2i(66, 38, 5, 5), accent)
+			_fill_rect(img, Rect2i(64, 56, 24, 5), skin)
+			_fill_rect(img, Rect2i(85, 54, 6, 5), skin.lightened(0.05))
+			_fill_rect(img, Rect2i(90, 53, 2, 2), skin.lightened(0.1))
+			_fill_rect(img, Rect2i(24, 60, 10, 5), skin)
 		"point_down":
-			_fill_rect(img, Rect2i(50, 46, 5, 22), body)
-			_fill_rect(img, Rect2i(48, 66, 8, 5), accent)
+			_fill_rect(img, Rect2i(64, 58, 6, 26), skin)
+			_fill_rect(img, Rect2i(62, 82, 10, 5), skin.lightened(0.05))
+			_fill_rect(img, Rect2i(24, 60, 10, 5), skin)
 		"act":
 			var bob := 2 if frame % 2 == 0 else 0
-			_fill_rect(img, Rect2i(8, 42 - bob, 14, 5), body)
-			_fill_rect(img, Rect2i(50, 42 + bob, 14, 5), body)
-		"correct":
-			_fill_rect(img, Rect2i(10, 36, 10, 5), body)
-			_fill_rect(img, Rect2i(52, 36, 10, 5), body)
+			_fill_rect(img, Rect2i(14, 56 - bob, 14, 5), skin)
+			_fill_rect(img, Rect2i(68, 56 + bob, 14, 5), skin)
+			_fill_ellipse(img, 20, 54 - bob, 3, 2, Color("c4a060"))
+			_fill_ellipse(img, 76, 54 + bob, 3, 2, Color("8a8a8a"))
+		"happy", "correct":
+			_fill_rect(img, Rect2i(16, 52, 12, 5), skin)
+			_fill_rect(img, Rect2i(68, 52, 12, 5), skin)
+		"tired":
+			_fill_rect(img, Rect2i(22, 64, 10, 4), skin)
+			_fill_rect(img, Rect2i(64, 64, 10, 4), skin)
 		_:
-			_fill_rect(img, Rect2i(12, 42, 10, 5), body)
-			_fill_rect(img, Rect2i(50, 42, 10, 5), body)
-	# Shawl
-	_fill_rect(img, Rect2i(20, 36, 32, 5), accent.darkened(0.12))
-	_fill_rect(img, Rect2i(22, 38, 28, 2), accent.lightened(0.1))
+			_fill_rect(img, Rect2i(22, 60, 10, 4), skin)
+			_fill_rect(img, Rect2i(64, 60, 10, 4), skin)
 	return ImageTexture.create_from_image(img)
 
 
@@ -219,6 +254,52 @@ static func icon_for_word(word_id: String, highlighted: bool = false) -> ImageTe
 			_fill_rect(img, Rect2i(9, 10, 2, 2), Color("5a3a20"))
 			_fill_rect(img, Rect2i(13, 10, 2, 2), Color("5a3a20"))
 			_fill_rect(img, Rect2i(9, 15, 6, 2), Color("5a3a20"))
+		"w21": # gadur — basin
+			_fill_ellipse(img, 12, 14, 8, 5, Color("7a9aaa"))
+			_fill_rect(img, Rect2i(5, 10, 14, 6), Color("8ab0c0"))
+			_fill_rect(img, Rect2i(7, 11, 10, 2), Color("c8e0e8"))
+		"w22": # hawas — looking eye
+			_fill_ellipse(img, 12, 12, 7, 5, Color("f0e0c8"))
+			_fill_ellipse(img, 12, 12, 3, 3, Color("2a1a18"))
+			_px(img, 13, 11, Color("f5f5f5"))
+		"w23": # warik — monkey
+			_fill_ellipse(img, 12, 11, 6, 5, Color("8a5a3a"))
+			_fill_rect(img, Rect2i(9, 15, 6, 5), Color("7a4a30"))
+			_fill_rect(img, Rect2i(5, 16, 4, 2), Color("6a3a20"))
+			_px(img, 10, 10, Color("1a1010"))
+			_px(img, 14, 10, Color("1a1010"))
+		"w24": # julak — elder sibling figure
+			_fill_ellipse(img, 12, 8, 5, 5, Color("c4a080"))
+			_fill_rect(img, Rect2i(8, 13, 8, 7), Color("5a6a8a"))
+			_fill_rect(img, Rect2i(9, 5, 6, 2), Color("2a1a18"))
+		"w25": # dingsanak — two figures
+			_fill_ellipse(img, 8, 9, 4, 4, Color("d4a090"))
+			_fill_ellipse(img, 16, 9, 4, 4, Color("c49080"))
+			_fill_rect(img, Rect2i(5, 13, 6, 6), Color("6a8a5a"))
+			_fill_rect(img, Rect2i(13, 13, 6, 6), Color("8a6a5a"))
+		"w26": # uyuh — tired / sweat
+			_fill_ellipse(img, 12, 11, 6, 6, Color("d4a07a"))
+			_fill_rect(img, Rect2i(10, 9, 2, 1), Color("2a1a18"))
+			_fill_rect(img, Rect2i(14, 9, 2, 1), Color("2a1a18"))
+			_px(img, 18, 8, Color("7ab0d0"))
+			_px(img, 19, 10, Color("7ab0d0"))
+		"w27": # padaringan — rice bin
+			_fill_rect(img, Rect2i(6, 8, 12, 12), Color("a07840"))
+			_fill_rect(img, Rect2i(5, 7, 14, 3), Color("8a6030"))
+			_fill_rect(img, Rect2i(8, 12, 8, 2), Color("c4a060"))
+		"w28": # atung — affectionate call / heart call
+			_fill_ellipse(img, 12, 10, 5, 5, Color("d4a090"))
+			_fill_rect(img, Rect2i(8, 8, 3, 2), Color("c06080"))
+			_fill_rect(img, Rect2i(16, 12, 4, 3), Color("e8c070"))
+		"w29": # ambun — dew drops
+			_fill_rect(img, Rect2i(6, 14, 12, 4), Color("4a7a3a"))
+			_px(img, 8, 10, Color("a8d8e8"))
+			_px(img, 12, 8, Color("c0e8f0"))
+			_px(img, 16, 11, Color("a8d8e8"))
+		"w30": # salau — dusk haze
+			_fill_rect(img, Rect2i(4, 4, 16, 16), Color("4a3058"))
+			_fill_ellipse(img, 12, 14, 8, 4, Color("6a4868"))
+			_px(img, 8, 8, Color("e8c080"))
 		_:
 			_fill_rect(img, Rect2i(7, 7, 10, 10), Color("aaaaaa"))
 	if highlighted:
@@ -393,22 +474,23 @@ static func _draw_palm(img: Image, base_x: int, base_y: int, scale: float, dusk_
 
 
 static func tree_sprite() -> ImageTexture:
-	var img := Image.create(64, 112, false, Image.FORMAT_RGBA8)
+	var img := Image.create(72, 160, false, Image.FORMAT_RGBA8)
 	img.fill(Color(0, 0, 0, 0))
-	_fill_ellipse(img, 32, 104, 16, 4, Color(0, 0, 0, 0.3))
-	# Trunk
-	_fill_rect(img, Rect2i(28, 48, 8, 56), Color("6a4228"))
-	_fill_rect(img, Rect2i(30, 48, 2, 56), Color("8a5a38"))
-	# Climbable marks
-	for i in 5:
-		_fill_rect(img, Rect2i(26, 56 + i * 10, 3, 2), Color("5a3820"))
-		_fill_rect(img, Rect2i(35, 60 + i * 10, 3, 2), Color("5a3820"))
-	# Canopy layers
-	_fill_ellipse(img, 32, 36, 26, 22, Color("1f5e28"))
-	_fill_ellipse(img, 22, 28, 14, 12, Color("2a7a34"))
-	_fill_ellipse(img, 42, 26, 14, 12, Color("2f8a3a"))
-	_fill_ellipse(img, 32, 18, 16, 12, Color("3a9a42"))
-	_fill_ellipse(img, 32, 30, 10, 8, Color("4aaa50"))
+	_fill_ellipse(img, 36, 152, 18, 5, Color(0, 0, 0, 0.3))
+	# Tall trunk rooted at bottom
+	_fill_rect(img, Rect2i(31, 58, 10, 94), Color("6a4228"))
+	_fill_rect(img, Rect2i(33, 58, 3, 94), Color("8a5a38"))
+	# Climbable marks / footholds
+	for i in 8:
+		_fill_rect(img, Rect2i(28, 68 + i * 10, 4, 2), Color("5a3820"))
+		_fill_rect(img, Rect2i(40, 72 + i * 10, 4, 2), Color("5a3820"))
+	# High canopy
+	_fill_ellipse(img, 36, 42, 30, 26, Color("1f5e28"))
+	_fill_ellipse(img, 22, 32, 16, 14, Color("2a7a34"))
+	_fill_ellipse(img, 50, 30, 16, 14, Color("2f8a3a"))
+	_fill_ellipse(img, 36, 18, 18, 14, Color("3a9a42"))
+	_fill_ellipse(img, 36, 36, 12, 10, Color("4aaa50"))
+	_fill_ellipse(img, 28, 48, 10, 8, Color("2f8a3a"))
 	return ImageTexture.create_from_image(img)
 
 

@@ -4,11 +4,13 @@ extends Node
 
 var config: Dictionary = {}
 var words_by_id: Dictionary = {} ## id -> Dictionary
-var word_ids: PackedStringArray = PackedStringArray()
+var word_ids: PackedStringArray = PackedStringArray() ## all known ids (compat)
+var mode_word_ids: Dictionary = {} ## mode_id -> PackedStringArray
 var story_segments: Array = []
 var reactions: Dictionary = {}
 var questions: Array = []
 var question_answers: Dictionary = {} ## word_id -> { q_id -> String }
+var question_answers_akamsi: Dictionary = {}
 var tutorial_steps: Array = []
 var endings: Dictionary = {}
 
@@ -30,12 +32,24 @@ func reload() -> void:
 			continue
 		words_by_id[id] = w
 		word_ids.append(id)
+	mode_word_ids.clear()
+	var raw_modes: Dictionary = words_root.get("modeWordIds", {})
+	for mode_key in raw_modes.keys():
+		var arr := PackedStringArray()
+		for wid in raw_modes[mode_key]:
+			arr.append(str(wid))
+		mode_word_ids[str(mode_key)] = arr
+	if not mode_word_ids.has("pendatang"):
+		mode_word_ids["pendatang"] = word_ids.duplicate()
+	if not mode_word_ids.has("akamsi"):
+		mode_word_ids["akamsi"] = word_ids.duplicate()
 	var story_root: Dictionary = _load_json("res://data/story.json")
 	story_segments = story_root.get("segments", [])
 	reactions = _load_json("res://data/dialog_reaction.json")
 	var q_root: Dictionary = _load_json("res://data/dialog_questions.json")
 	questions = q_root.get("questions", [])
 	question_answers = q_root.get("answers", {})
+	question_answers_akamsi = q_root.get("answers_akamsi", {})
 	var tut: Dictionary = _load_json("res://data/tutorial.json")
 	tutorial_steps = tut.get("steps", [])
 	var end_root: Dictionary = _load_json("res://data/endings.json")
@@ -48,6 +62,13 @@ func get_word(word_id: String) -> Dictionary:
 	return words_by_id.get(word_id, {})
 
 
+func get_word_ids_for_mode(mode_id: String) -> PackedStringArray:
+	var key := "akamsi" if mode_id == "akamsi" else "pendatang"
+	if mode_word_ids.has(key):
+		return mode_word_ids[key]
+	return word_ids
+
+
 func get_mode(mode_id: String) -> Dictionary:
 	var modes: Dictionary = config.get("modes", {})
 	if mode_id == "pendatang" or mode_id == "normal":
@@ -57,8 +78,11 @@ func get_mode(mode_id: String) -> Dictionary:
 	return modes.get(mode_id, {})
 
 
-func get_question_answer(word_id: String, question_id: String) -> String:
-	var by_word: Dictionary = question_answers.get(word_id, {})
+func get_question_answer(word_id: String, question_id: String, akamsi: bool = false) -> String:
+	var pool: Dictionary = question_answers_akamsi if akamsi else question_answers
+	var by_word: Dictionary = pool.get(word_id, {})
+	if by_word.is_empty() and akamsi:
+		by_word = question_answers.get(word_id, {})
 	return str(by_word.get(question_id, "Nenek diam sejenak... Nenek kurang ingat, Nak."))
 
 

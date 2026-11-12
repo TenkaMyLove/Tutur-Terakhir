@@ -45,13 +45,14 @@ mouse_filter = 0
 
 [node name="Nenek" type="TextureRect" parent="Stage"]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 68.0
-offset_right = 288.0
-offset_bottom = 188.0
+offset_left = 176.0
+offset_top = 40.0
+offset_right = 304.0
+offset_bottom = 200.0
 mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
+texture_filter = 1
 
 [node name="Icons" type="HBoxContainer" parent="Stage"]
 layout_mode = 0

@@ -59,7 +59,7 @@ func start_session(p_mode: String) -> void:
 	segment_index = 0
 	line_index = 0
 	vocab.clear()
-	for wid in GameData.word_ids:
+	for wid in GameData.get_word_ids_for_mode(mode_id):
 		vocab[wid] = {
 			"status": WordStatus.UNDISCOVERED,
 			"attempts": 0,
@@ -210,7 +210,7 @@ func ask_question(question_id: String) -> String:
 	_apply_energy(cost)
 	_apply_trust(int(t.get("onQuestion", 0)))
 	AudioManager.play_sfx("sfx_click")
-	return GameData.get_question_answer(active_word_id, question_id)
+	return GameData.get_question_answer(active_word_id, question_id, is_akamsi())
 
 
 func submit_guess(word_id: String, choice: String) -> String:
@@ -376,13 +376,26 @@ func _apply_line_context() -> void:
 	var data := current_line_data()
 	if data.is_empty():
 		return
-	var words: Array = data.get("words", [])
+	var words: Array
+	if is_akamsi() and data.has("words_akamsi"):
+		words = data.get("words_akamsi", [])
+	else:
+		words = data.get("words", [])
 	discover_words(words)
 	if not words.is_empty():
 		set_active_word(str(words[0]))
-	var gesture: String = str(data.get("gesture", "talk"))
+	var gesture: String
+	if is_akamsi() and data.has("gesture_akamsi"):
+		gesture = str(data.get("gesture_akamsi", "talk"))
+	else:
+		gesture = str(data.get("gesture", "talk"))
 	set_nenek_state(gesture if gesture != "" else "talk")
-	set_highlights(data.get("highlightIcons", []))
+	var icons: Array
+	if is_akamsi() and data.has("highlightIcons_akamsi"):
+		icons = data.get("highlightIcons_akamsi", [])
+	else:
+		icons = data.get("highlightIcons", [])
+	set_highlights(icons)
 
 
 func get_low_energy_line() -> String:

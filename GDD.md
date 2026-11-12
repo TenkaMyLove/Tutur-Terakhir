@@ -17,7 +17,7 @@ Pemain duduk bersama Nenek Wati, penutur terakhir bahasa Banjar di kampungnya, d
 
 Game memiliki **dua mode permainan**:
 1. **Mode Normal (`Pendatang`):** Nenek bercerita dalam bahasa Indonesia yang disisipi 20 kata bahasa Banjar bergaris bawah. Dirancang untuk pemain yang belum akrab dengan bahasa Banjar dan kurator agar setiap kata dapat disimpulkan secara adil.
-2. **Mode Sulit (`Akamsi` – Anak Kampung Sini):** Terbuka setelah pemain **menamatkan Mode Normal** (minimal 15/20 kata benar). Seluruh dialog Nenek disajikan **100% dalam bahasa Banjar**, menantang pemain mengandalkan gestur, ikon benda, dan pemahaman bahasa Banjar penuh.
+2. **Mode Sulit (`Akamsi` – Anak Kampung Sini):** Terbuka setelah pemain **menamatkan Mode Normal** (minimal 15/20 kata benar). Dialog **berbeda** (bukan terjemahan 1:1), 100% Bahasa Banjar, dengan **10 kata lama + 10 kata baru**. Pemain menebak dari gestur, ikon, dan pertanyaan (jawaban petunjuk tanpa arti langsung).
 
 ### 1.2 Pilar Desain
 - **Menebak, bukan diberi tahu.** Makna selalu bisa disimpulkan dari konteks; game tidak pernah memberi terjemahan langsung.
@@ -167,8 +167,9 @@ Sesi dapat berakhir lebih awal bila energi habis di tengah cerita; Nenek menutup
 
 Seluruh konten disimpan sebagai data (JSON) terpisah dari kode sehingga bahasa, penutur, dan cerita baru dapat ditambahkan tanpa mengubah mesin game.
 
-### 6.2 Daftar 20 Kata Aktif Bahasa Banjar (Tervalidasi)
+### 6.2 Daftar Kata Aktif Bahasa Banjar (Tervalidasi)
 
+#### Mode Pendatang (20 kata)
 | Kategori | Jumlah | Daftar Kata & Arti |
 | :--- | :--- | :--- |
 | **Benda & peralatan** | 7 | `pelataran` (teras), `rinjing` (penggorengan/wajan), `panai` (cobek), `cirat` (teko), `ulas tilam` (sprei), `tapih` (kain sarung wanita), `lading` (pisau) |
@@ -177,7 +178,10 @@ Seluruh konten disimpan sebagai data (JSON) terpisah dari kode sehingga bahasa, 
 | **Kerabat** | 2 | `kai` (kakek), `acil` (bibi/tante) |
 | **Perasaan dan waktu** | 3 | `bahari` (zaman dulu), `karindangan` (kerinduan), `himung` (senang/gembira) |
 
-**Pool Cadangan (10 kata):** `gadur` (baskom), `hawas` (melihat), `warik` (kera), `julak` (kakak orang tua), `dingsanak` (saudara), `uyuh` (capek/lelah), `padaringan` (tempat beras), `atung` (panggilan sayang), `ambun` (embun), `salau` (remang).
+#### Mode Akamsi (20 kata: 10 lama + 10 baru)
+**Dipertahankan:** `pelataran`, `rinjing`, `panai`, `cirat`, `tapih`, `haruan`, `kai`, `acil`, `bahari`, `himung`
+
+**Baru:** `gadur` (baskom), `hawas` (melihat), `warik` (kera), `julak` (kakak orang tua), `dingsanak` (saudara), `uyuh` (capek/lelah), `padaringan` (tempat beras), `atung` (panggilan sayang), `ambun` (embun), `salau` (remang)
 
 ### 6.3 Aturan Penulisan Cerita
 - Setiap kata muncul **minimal dua kali** dalam konteks berbeda agar bisa disimpulkan.

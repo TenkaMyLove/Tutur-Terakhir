@@ -29,7 +29,7 @@ func _ready() -> void:
 	var win_th: int = int(GameData.config.get("game", {}).get("winThreshold", 15))
 	_score.text = "Kata terselamatkan: %d / %d  (target %d)" % [
 		GameState.get_correct_count(),
-		GameData.word_ids.size(),
+		GameData.get_word_ids_for_mode(GameState.mode_id).size(),
 		win_th,
 	]
 	_unlock.visible = is_win and SaveManager.is_akamsi_unlocked()

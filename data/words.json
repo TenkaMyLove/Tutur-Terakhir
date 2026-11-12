@@ -219,6 +219,126 @@
       "narrativeClue": "Disebut saat mendengar suara tawa anak-anak dan saat kata-kata tercatat",
       "icon": "icon_himung",
       "difficulty": 3
+    },
+    {
+      "id": "w21",
+      "form": "gadur",
+      "meaning": "baskom",
+      "distractors": ["ember besar", "kendi air", "mangkuk nasi"],
+      "category": "benda",
+      "visualClue": "Nenek menunjuk wadah lebar untuk menampung air cucian",
+      "narrativeClue": "Disebut saat mencuci di pelataran dan menimba air sore hari",
+      "icon": "icon_gadur",
+      "difficulty": 2
+    },
+    {
+      "id": "w22",
+      "form": "hawas",
+      "meaning": "melihat",
+      "distractors": ["mendengar jauh", "memanggil keras", "menyuruh pergi"],
+      "category": "tindakan",
+      "visualClue": "Gestur Nenek menatap jauh ke arah sungai atau pohon",
+      "narrativeClue": "Disebut saat mengamati perahu dan kera di dahan",
+      "icon": "icon_hawas",
+      "difficulty": 2
+    },
+    {
+      "id": "w23",
+      "form": "warik",
+      "meaning": "kera",
+      "distractors": ["burung pipit", "kucing kampung", "tupai kecil"],
+      "category": "alam",
+      "visualClue": "Ikon binatang berkaki empat yang memanjat dahan pohon",
+      "narrativeClue": "Disebut saat ada yang meloncat di pohon dekat pelataran",
+      "icon": "icon_warik",
+      "difficulty": 2
+    },
+    {
+      "id": "w24",
+      "form": "julak",
+      "meaning": "kakak orang tua",
+      "distractors": ["adik ayah", "tetangga dekat", "kakek buyut"],
+      "category": "kerabat",
+      "visualClue": "Nenek menunjuk foto orang tua laki-laki generasi di atas ayah/ibu",
+      "narrativeClue": "Disebut saat mengenang saudara orang tua yang sering datang",
+      "icon": "icon_julak",
+      "difficulty": 3
+    },
+    {
+      "id": "w25",
+      "form": "dingsanak",
+      "meaning": "saudara",
+      "distractors": ["teman sepermainan", "tetangga baru", "murid mengaji"],
+      "category": "kerabat",
+      "visualClue": "Nenek mengisyaratkan orang-orang yang terikat darah keluarga",
+      "narrativeClue": "Disebut saat berbicara tentang keluarga yang merantau",
+      "icon": "icon_dingsanak",
+      "difficulty": 3
+    },
+    {
+      "id": "w26",
+      "form": "uyuh",
+      "meaning": "capek / lelah",
+      "distractors": ["haus sekali", "kedinginan", "kesal hati"],
+      "category": "perasaan",
+      "visualClue": "Nenek mengusap dahi dan bahu turun setelah bekerja",
+      "narrativeClue": "Disebut setelah mencuci, menimba, atau berdiri lama di pelataran",
+      "icon": "icon_uyuh",
+      "difficulty": 2
+    },
+    {
+      "id": "w27",
+      "form": "padaringan",
+      "meaning": "tempat beras",
+      "distractors": ["lemari baju", "rak piring", "peti dokumen"],
+      "category": "benda",
+      "visualClue": "Nenek menunjuk peti/wadah kayu penyimpan beras di sudut dapur",
+      "narrativeClue": "Disebut saat menyiapkan nasi sore dan mengecek sisa beras",
+      "icon": "icon_padaringan",
+      "difficulty": 3
+    },
+    {
+      "id": "w28",
+      "form": "atung",
+      "meaning": "panggilan sayang",
+      "distractors": ["teguran marah", "sapaan formal", "nama julukan"],
+      "category": "perasaan",
+      "visualClue": "Nenek mengulurkan tangan lembut sambil memanggil anak",
+      "narrativeClue": "Disebut saat menyapa cucu atau anak kampung yang datang",
+      "icon": "icon_atung",
+      "difficulty": 3
+    },
+    {
+      "id": "w29",
+      "form": "ambun",
+      "meaning": "embun",
+      "distractors": ["kabut asap", "gerimis hujan", "embusan angin"],
+      "category": "alam",
+      "visualClue": "Titik air dingin di ujung daun rumput pagi/sore",
+      "narrativeClue": "Disebut saat halaman basah dan langit mulai remang",
+      "icon": "icon_ambun",
+      "difficulty": 2
+    },
+    {
+      "id": "w30",
+      "form": "salau",
+      "meaning": "remang",
+      "distractors": ["terang benderang", "mendung hujan", "angin kencang"],
+      "category": "alam",
+      "visualClue": "Langit dan halaman yang setengah gelap sebelum malam penuh",
+      "narrativeClue": "Disebut saat senja turun dan pelita belum dinyalakan",
+      "icon": "icon_salau",
+      "difficulty": 3
     }
-  ]
+  ],
+  "modeWordIds": {
+    "pendatang": [
+      "w01", "w02", "w03", "w04", "w05", "w06", "w07", "w08", "w09", "w10",
+      "w11", "w12", "w13", "w14", "w15", "w16", "w17", "w18", "w19", "w20"
+    ],
+    "akamsi": [
+      "w01", "w03", "w05", "w07", "w09", "w13", "w15", "w16", "w17", "w20",
+      "w21", "w22", "w23", "w24", "w25", "w26", "w27", "w28", "w29", "w30"
+    ]
+  }
 }

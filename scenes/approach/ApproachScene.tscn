@@ -65,19 +65,22 @@ text = "Jalan terus ←"
 
 [node name="SpeechBubble" type="PanelContainer" parent="UI"]
 visible = false
-offset_right = 140.0
+custom_minimum_size = Vector2(168, 28)
+offset_right = 168.0
 offset_bottom = 28.0
 
 [node name="Margin" type="MarginContainer" parent="UI/SpeechBubble"]
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 2
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
 
 [node name="Label" type="Label" parent="UI/SpeechBubble/Margin"]
+custom_minimum_size = Vector2(152, 16)
 theme_override_font_sizes/font_size = 10
 theme_override_colors/font_color = Color(1, 0.93, 0.8, 1)
 text = "Ehh awas kena tegugur!"
-autowrap_mode = 3
+horizontal_alignment = 1
+autowrap_mode = 0
 
 [node name="TutorialPopup" parent="." instance=ExtResource("2")]

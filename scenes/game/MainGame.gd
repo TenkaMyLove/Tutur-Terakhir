@@ -109,8 +109,7 @@ func _build_icons() -> void:
 	for c in _icons_row.get_children():
 		c.queue_free()
 	_icon_buttons.clear()
-	# Show a subset of stage icons (all 20 in a wrap row is fine for prototype)
-	for wid in GameData.word_ids:
+	for wid in GameData.get_word_ids_for_mode(GameState.mode_id):
 		var btn := TextureButton.new()
 		btn.custom_minimum_size = Vector2(16, 16)
 		btn.ignore_texture_size = true
@@ -204,7 +203,11 @@ func _on_advance_pressed() -> void:
 			GameState.set_nenek_state("tired")
 		elif GameState.tutorial_index < 0 and not GameState.story_complete:
 			var data := GameState.current_line_data()
-			var g: String = str(data.get("gesture", "talk"))
+			var g: String
+			if GameState.is_akamsi() and data.has("gesture_akamsi"):
+				g = str(data.get("gesture_akamsi", "talk"))
+			else:
+				g = str(data.get("gesture", "talk"))
 			GameState.set_nenek_state(g if g != "" else "idle")
 		else:
 			GameState.set_nenek_state("idle")

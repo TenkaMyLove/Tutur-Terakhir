@@ -9,6 +9,7 @@ const PLAYER_SPEED := 72.0
 const SPAWN_X := 1040.0
 const ARRIVE_X := 110.0
 const VIGNETTE_X := 620.0
+const KID_CLIMB_Y := 34.0 ## offset above ground (lower trunk/branch)
 
 @onready var _camera: Camera2D = $Camera2D
 @onready var _player: Sprite2D = $World/Player
@@ -61,17 +62,18 @@ func _setup_world() -> void:
 	_tree.texture = PixelArt.tree_sprite()
 	_tree.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	_tree.centered = true
-	_tree.position = Vector2(VIGNETTE_X, GROUND_Y - 28)
+	# 160px tall tree: place so trunk base sits on ground
+	_tree.position = Vector2(VIGNETTE_X, GROUND_Y - 80)
 
 	_kid.texture = PixelArt.person_sprite("kid", 0)
 	_kid.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	_kid.centered = true
-	_kid.position = Vector2(VIGNETTE_X + 2, GROUND_Y - 56)
+	_kid.position = Vector2(VIGNETTE_X + 2, GROUND_Y - KID_CLIMB_Y)
 
 	_mother.texture = PixelArt.person_sprite("mother", 0)
 	_mother.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	_mother.centered = true
-	_mother.position = Vector2(VIGNETTE_X + 42, GROUND_Y) # behind / watching from path side
+	_mother.position = Vector2(VIGNETTE_X + 42, GROUND_Y)
 	_mother.flip_h = true
 
 	_house.texture = PixelArt.house_far()
@@ -91,23 +93,27 @@ func _setup_world() -> void:
 	_spawn_decor()
 
 	var sb := StyleBoxFlat.new()
-	sb.bg_color = Color(0.12, 0.08, 0.06, 0.94)
+	sb.bg_color = Color(0.12, 0.08, 0.06, 0.96)
 	sb.border_color = Color(0.95, 0.78, 0.42, 1)
 	sb.set_border_width_all(1)
-	sb.set_corner_radius_all(3)
-	sb.content_margin_left = 6
-	sb.content_margin_right = 6
-	sb.content_margin_top = 3
-	sb.content_margin_bottom = 3
+	sb.set_corner_radius_all(4)
+	sb.content_margin_left = 8
+	sb.content_margin_right = 8
+	sb.content_margin_top = 4
+	sb.content_margin_bottom = 4
 	_bubble.add_theme_stylebox_override("panel", sb)
+	_bubble.custom_minimum_size = Vector2(168, 28)
 	_bubble_label.text = "Ehh awas kena tegugur!"
+	_bubble_label.autowrap_mode = TextServer.AUTOWRAP_OFF
+	_bubble_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_bubble_label.add_theme_font_size_override("font_size", 10)
+	_bubble_label.add_theme_color_override("font_color", Color(1.0, 0.93, 0.8, 1.0))
+	_bubble_label.custom_minimum_size = Vector2(152, 16)
 
 
 func _spawn_decor() -> void:
 	for c in _decor.get_children():
 		c.queue_free()
-	# Fence posts along the path (right side of village)
 	for x in [860.0, 900.0, 940.0, 980.0]:
 		var post := Sprite2D.new()
 		post.texture = PixelArt.fence_post()
@@ -115,7 +121,6 @@ func _spawn_decor() -> void:
 		post.centered = true
 		post.position = Vector2(x, GROUND_Y - 2)
 		_decor.add_child(post)
-	# Extra small bushes as colored blocks near river bank
 	for x in [280.0, 360.0, 740.0, 820.0]:
 		var bush := Sprite2D.new()
 		bush.texture = PixelArt.solid(Vector2i(18, 10), Color("2f6a32"))
@@ -143,7 +148,7 @@ func _process(delta: float) -> void:
 		_anim_t = 0.0
 		_frame = (_frame + 1) % 2
 		_kid.texture = PixelArt.person_sprite("kid", _frame)
-		_kid.position.y = GROUND_Y - 56 - _frame * 2
+		_kid.position.y = GROUND_Y - KID_CLIMB_Y - _frame * 2
 
 	if _bubble.visible:
 		_bubble_timer -= delta
@@ -182,16 +187,28 @@ func _process(delta: float) -> void:
 
 func _show_vignette() -> void:
 	_vignette_shown = true
+	_bubble_label.text = "Ehh awas kena tegugur!"
 	_bubble.visible = true
 	_bubble_timer = 4.5
+	_bubble.reset_size()
 	_update_bubble_pos()
 	_hint.text = "Seorang ibu mengawasi anaknya di pohon…"
 	AudioManager.play_sfx("sfx_click")
 
 
 func _update_bubble_pos() -> void:
+	# Center of mother sprite in canvas space → place bubble above head
 	var screen_pos := _mother.get_global_transform_with_canvas().origin
-	_bubble.position = screen_pos + Vector2(-70, -58)
+	var half_h := 24.0
+	if _mother.texture:
+		half_h = float(_mother.texture.get_height()) * 0.5
+	var bw := maxf(_bubble.size.x, _bubble.custom_minimum_size.x)
+	var bh := maxf(_bubble.size.y, _bubble.custom_minimum_size.y)
+	if bw < 8.0:
+		bw = 168.0
+	if bh < 8.0:
+		bh = 28.0
+	_bubble.position = screen_pos + Vector2(-bw * 0.5, -half_h - bh - 10.0)
 
 
 func _arrive() -> void:
