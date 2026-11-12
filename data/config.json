@@ -1,0 +1,48 @@
+{
+  "game": {
+    "title": "Melestarikan: Tutur Terakhir",
+    "language": "Bahasa Banjar",
+    "totalWords": 20,
+    "winThreshold": 15,
+    "tierFull": 20,
+    "tierLegacy": 18,
+    "tierThin": 15,
+    "maxAttemptsPerWord": 2,
+    "questionsPerSession": 6
+  },
+  "energy": {
+    "initial": 100.0,
+    "max": 100.0,
+    "passiveDrainPerSec": 0.22,
+    "lowThreshold": 25.0,
+    "lowDrainMultiplier": 1.25,
+    "onCorrect": 3.0,
+    "onWrong": -8.0,
+    "onQuestionNormal": -4.0,
+    "onQuestionWaspada": -6.0
+  },
+  "trust": {
+    "initial": 60,
+    "min": 0,
+    "max": 100,
+    "highThreshold": 60,
+    "midThreshold": 30,
+    "onCorrect": 8,
+    "onWrong": -15,
+    "onQuestion": 0
+  },
+  "modes": {
+    "normal": {
+      "id": "normal",
+      "label": "Pendatang",
+      "subtitle": "Cerita Indonesia + 20 kata Banjar (Untuk pemain baru)",
+      "unlockedByDefault": true
+    },
+    "akamsi": {
+      "id": "akamsi",
+      "label": "Akamsi",
+      "subtitle": "100% Bahasa Banjar (Terbuka setelah tamat Mode Pendatang)",
+      "unlockedByDefault": false
+    }
+  }
+}

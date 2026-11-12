@@ -1,0 +1,85 @@
+[gd_scene load_steps=2 format=3 uid="uid://vocab_book"]
+
+[ext_resource type="Script" path="res://scenes/vocab/VocabBook.gd" id="1"]
+
+[node name="VocabBook" type="CanvasLayer"]
+layer = 15
+script = ExtResource("1")
+
+[node name="Dim" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.04, 0.02, 0.7)
+
+[node name="Root" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Root"]
+custom_minimum_size = Vector2(440, 230)
+
+[node name="Margin" type="MarginContainer" parent="Root/Panel"]
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 6
+
+[node name="HBox" type="HBoxContainer" parent="Root/Panel/Margin"]
+theme_override_constants/separation = 8
+
+[node name="Left" type="VBoxContainer" parent="Root/Panel/Margin/HBox"]
+custom_minimum_size = Vector2(170, 0)
+size_flags_horizontal = 3
+
+[node name="ListTitle" type="Label" parent="Root/Panel/Margin/HBox/Left"]
+text = "Buku Kosakata"
+theme_override_font_sizes/font_size = 12
+
+[node name="WordList" type="ItemList" parent="Root/Panel/Margin/HBox/Left"]
+custom_minimum_size = Vector2(0, 180)
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 10
+
+[node name="Right" type="VBoxContainer" parent="Root/Panel/Margin/HBox"]
+custom_minimum_size = Vector2(230, 0)
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="IconRow" type="HBoxContainer" parent="Root/Panel/Margin/HBox/Right"]
+
+[node name="Icon" type="TextureRect" parent="Root/Panel/Margin/HBox/Right/IconRow"]
+custom_minimum_size = Vector2(24, 24)
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FormLabel" type="Label" parent="Root/Panel/Margin/HBox/Right"]
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(1, 0.9, 0.7, 1)
+text = "—"
+
+[node name="StatusLabel" type="Label" parent="Root/Panel/Margin/HBox/Right"]
+theme_override_font_sizes/font_size = 10
+text = ""
+
+[node name="ClueLabel" type="Label" parent="Root/Panel/Margin/HBox/Right"]
+theme_override_font_sizes/font_size = 9
+autowrap_mode = 3
+text = ""
+
+[node name="HintLabel" type="Label" parent="Root/Panel/Margin/HBox/Right"]
+theme_override_font_sizes/font_size = 9
+theme_override_colors/font_color = Color(0.95, 0.8, 0.55, 1)
+autowrap_mode = 3
+text = ""
+
+[node name="Choices" type="VBoxContainer" parent="Root/Panel/Margin/HBox/Right"]
+theme_override_constants/separation = 2
+
+[node name="CloseBtn" type="Button" parent="Root/Panel/Margin/HBox/Right"]
+text = "Tutup buku"

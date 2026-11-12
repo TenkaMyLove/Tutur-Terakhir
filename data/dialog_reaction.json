@@ -1,0 +1,25 @@
+{
+  "correct": [
+    "Nah, bujur banar! Kamu mendengar dengan baik sekali, Nak.",
+    "Iya, tepat itu! Catat baik-baik di bukumu sebelum Nenek lupa.",
+    "Hati Nenek senang, satu lagi kata lama kita terselamatkan.",
+    "Betul, Nak. Begitulah orang-orang tua kita dulu mengucapkannya.",
+    "Pintar kamu. Nenek jadi bersemangat bercerita lagi."
+  ],
+  "wrong_first": [
+    "Hampir, Nak. Coba ingat lagi cerita Nenek dan perhatikan benda di teras.",
+    "Bukan yang itu, Nak. Masih ada kesempatan, dengarkan petunjuknya baik-baik.",
+    "Belum pas, Nak. Jangan terburu-buru, coba tanya Nenek kalau ragu.",
+    "Salah sedikit, Nak. Ingat-ingat lagi saat Nenek menyebut kata itu."
+  ],
+  "wrong_missed": [
+    "Sayang sekali, Nak... Artinya adalah \"{meaning}\". Nenek taruh dulu di ingatan kita.",
+    "Tidak apa-apa, Nak. Kata \"{form}\" itu berarti \"{meaning}\". Nenek agak lelah mengulangnya.",
+    "Ah, terlewat satu lagi... \"{form}\" artinya \"{meaning}\". Semoga kata lain masih sempat tercatat."
+  ],
+  "low_energy": [
+    "*Uhuk...* Sebentar ya, Nak. Nenek tarik napas dulu, hari makin gelap.",
+    "*Uhuk...* Mata Nenek mulai berat. Pelan-pelan ya, Nak...",
+    "Tenaga Nenek tinggal sedikit, Nak. Cepat catat kata yang sudah kamu tahu..."
+  ]
+}

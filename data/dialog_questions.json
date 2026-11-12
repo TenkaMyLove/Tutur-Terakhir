@@ -1,0 +1,142 @@
+{
+  "questions": [
+    {
+      "id": "q_use",
+      "label": "Itu untuk apa, Nek?"
+    },
+    {
+      "id": "q_show",
+      "label": "Bisa ditunjukkan lagi?"
+    },
+    {
+      "id": "q_feel",
+      "label": "Nenek rasakan apa waktu itu?"
+    },
+    {
+      "id": "q_who",
+      "label": "Siapa atau di mana itu, Nek?"
+    }
+  ],
+  "answers": {
+    "w01": {
+      "q_use": "Di sinilah kita duduk bersantai sore hari sambil melihat halaman depan rumah panggung.",
+      "q_show": "Lihat papan kayu di depan pintu masuk ini, tempat kursi dan tikar digelar.",
+      "q_feel": "Angin sungai paling sejuk terasa di bagian depan rumah ini.",
+      "q_who": "Di bagian depan rumah sebelum anak tangga menuju halaman."
+    },
+    "w02": {
+      "q_use": "Supaya debu hilang dan tempat duduk enak dipakai saat ada tamu datang.",
+      "q_show": "Nenek menyusun rapi barang-barang dan meluruskan alas duduk dengan kedua tangan.",
+      "q_feel": "Rumah yang tertata rapi membuat hati lebih tenang menyambut senja.",
+      "q_who": "Di seluruh sudut ruang depan rumah ini."
+    },
+    "w03": {
+      "q_use": "Untuk menampung minyak panas, menumis bumbu, dan menggoreng lauk di atas api.",
+      "q_show": "Itu wadah masak logam cekung berwarna hitam di sebelah tungku dapur.",
+      "q_feel": "Aroma masakan hangat dari benda itu selalu memanggil anggota keluarga ke dapur.",
+      "q_who": "Di atas perapian dapur sebelah."
+    },
+    "w04": {
+      "q_use": "Agar santan tidak pecah dan bumbu tercampur rata di dalam wajan.",
+      "q_show": "Begini caranya, tangan Nenek memutar-mutar sendok di dalam masakan yang mendidih.",
+      "q_feel": "Harus sabar dan pelan-pelan supaya masakannya matang sempurna.",
+      "q_who": "Dilakukan di atas wajan panas."
+    },
+    "w05": {
+      "q_use": "Tempat menaruh cabai, bawang, dan garam sebelum dilumatkan jadi sambal.",
+      "q_show": "Lihat benda batu berbentuk piring tebal yang agak cekung itu.",
+      "q_feel": "Sambal yang dibuat di batu selalu lebih sedap daripada alat modern.",
+      "q_who": "Di meja dapur, selalu berpasangan dengan ulekannya."
+    },
+    "w06": {
+      "q_use": "Untuk menghaluskan bumbu dapur sampai lumat dan wangi.",
+      "q_show": "Tangan Nenek menekan lalu memutar batu ulekan berulang-ulang di atas cobek.",
+      "q_feel": "Memang bikin tangan agak pegal, tapi baunya langsung menggugah selera.",
+      "q_who": "Dilakukan di atas cobek batu."
+    },
+    "w07": {
+      "q_use": "Untuk menyimpan air minum atau teh panas lalu menuangkannya ke cangkir tamu.",
+      "q_show": "Wadah berpegangan dengan corong panjang di atas meja itu.",
+      "q_feel": "Selalu siap di meja setiap kali ada yang datang berkunjung.",
+      "q_who": "Di atas meja teras, di samping cangkir-cangkir."
+    },
+    "w08": {
+      "q_use": "Untuk melapisi permukaan kasur agar tetap bersih dan nyaman saat berbaring.",
+      "q_show": "Kain tipis bermotif bunga yang sudutnya diselipkan ke bawah kasur di kamar itu.",
+      "q_feel": "Kasur yang baru diganti kain alasnya selalu terasa sejuk dan harum.",
+      "q_who": "Terpasang membentang di atas tempat tidur kamar tamu."
+    },
+    "w09": {
+      "q_use": "Dipakai melilit tubuh bagian bawah sebagai pakaian harian perempuan di rumah.",
+      "q_show": "Kain panjang yang ujungnya dijahit melingkar dan dilipat di pinggang Nenek ini.",
+      "q_feel": "Nyaman, sejuk, dan menghangatkan kaki ketika angin sore mulai dingin.",
+      "q_who": "Dipakai Nenek sejak pagi tadi."
+    },
+    "w10": {
+      "q_use": "Membawa uang ke pasar lalu pulang membawa barang atau bahan masakan yang dibutuhkan.",
+      "q_show": "Tangan Nenek menyerahkan uang dan menerima kantong belanjaan dari pedagang.",
+      "q_feel": "Dulu ramai sekali tawar-menawar dari atas perahu di pasar sungai.",
+      "q_who": "Dilakukan antara pembeli dan pedagang di pasar."
+    },
+    "w11": {
+      "q_use": "Tumbuh alami menutupi tanah halaman dan tepian sungai; kadang disabit untuk ternak.",
+      "q_show": "Hamparan tumbuhan hijau berhelai tipis di tanah luar pelataran itu.",
+      "q_feel": "Kalau pagi hari, ujung-ujungnya basah oleh embun yang sejuk.",
+      "q_who": "Di halaman tanah dan sepanjang pinggir jalan kampung."
+    },
+    "w12": {
+      "q_use": "Untuk memotong sayur, mengupas bumbu, dan membersihkan sisik ikan di dapur.",
+      "q_show": "Benda logam pipih bermata tajam dengan gagang kayu di tangan Nenek itu.",
+      "q_feel": "Alat dapur andalan Nenek sejak muda—kalau diasah tajam, kerja memasak jadi cepat.",
+      "q_who": "Disimpan di rak dapur sebelah talenan kayu."
+    },
+    "w13": {
+      "q_use": "Dipancing di perairan rawa lalu dimasak kuah kuning atau dibakar untuk lauk.",
+      "q_show": "Hewan air tawar berkepala agak pipih dengan tubuh licin memanjang.",
+      "q_feel": "Dagingnya gurih sekali dan sangat digemari orang kampung sejak dulu.",
+      "q_who": "Hidup di sungai dan rawa-rawa Kalimantan."
+    },
+    "w14": {
+      "q_use": "Menandakan matahari sudah tenggelam sehingga lampu pelita wajib dinyalakan.",
+      "q_show": "Lihat langit di luar sana—cahaya jingganya hampir habis tak tersisa.",
+      "q_feel": "Membuat suasana jadi sunyi dan mata Nenek sulit melihat tanpa cahaya.",
+      "q_who": "Datang setiap malam setelah senja berakhir."
+    },
+    "w15": {
+      "q_use": "Sosok orang tua laki-laki generasi di atas ayah dan ibu yang membimbing cucu-cucunya.",
+      "q_show": "Pria berambut putih di bingkai foto sebelah Nenek itu.",
+      "q_feel": "Beliau selalu sabar mengajari anak-anak membuat perahu mainan.",
+      "q_who": "Suami Nenek, orang tua dari ayah atau ibumu."
+    },
+    "w16": {
+      "q_use": "Saudara perempuan dari ibu atau ayah yang dekat dan menyayangi keponakannya.",
+      "q_show": "Wanita tersenyum di samping foto keluarga itu.",
+      "q_feel": "Kehadirannya selalu riang dan penuh oleh-oleh kue manis.",
+      "q_who": "Adik perempuan dari orang tua."
+    },
+    "w17": {
+      "q_use": "Menyebut masa lampau yang sudah sangat lama berlalu, puluhan tahun sebelum hari ini.",
+      "q_show": "Nenek menatap jauh ke masa muda Nenek, jauh sebelum gedung-gedung baru berdiri.",
+      "q_feel": "Ada rasa hangat sekaligus sedih karena waktu itu tak bisa diputar ulang.",
+      "q_who": "Masa ketika kampung ini masih penuh penutur bahasa Banjar lama."
+    },
+    "w18": {
+      "q_use": "Rasa di dalam hati ketika ingin sekali bertemu orang atau masa yang jauh di sana.",
+      "q_show": "Nenek menangkupkan tangan di dada sambil memandang jalan sepi dengan mata berkaca-kaca.",
+      "q_feel": "Berat di dada, namun hangat kalau yang dinanti akhirnya pulang.",
+      "q_who": "Perasaan Nenek terhadap anak-anak yang merantau."
+    },
+    "w19": {
+      "q_use": "Tinggal diam di suatu tempat sampai orang atau hal yang diharapkan benar-benar datang.",
+      "q_show": "Nenek duduk tak beranjak, terus menoleh ke arah jalan setapak dan sungai.",
+      "q_feel": "Terasa lama kalau sendirian, tapi hilang lelahnya begitu yang ditunggu tiba.",
+      "q_who": "Nenek yang menanti kedatangan anak-anak desa."
+    },
+    "w20": {
+      "q_use": "Menggambarkan hati yang dipenuhi sukacita, tawa, dan kelegaan.",
+      "q_show": "Lihat senyum lebar di wajah Nenek dan mata yang berbinar cerah ini.",
+      "q_feel": "Ringan sekali di dada, seakan segala lelah sore ini terbayar lunas.",
+      "q_who": "Perasaan Nenek saat bahasa ini berhasil kamu catat."
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "endings": {
+    "full": {
+      "id": "full",
+      "title": "Menang – Warisan Penuh",
+      "image": "end_win",
+      "lines": [
+        "Dua puluh dari dua puluh kata berhasil kamu catat sebelum malam tiba.",
+        "Anak-anak desa berdatangan ke pelataran, duduk melingkar mendengarkan Nenek Wati dan menirukan seluruh cerita tanpa ada satu kata pun yang tertinggal.",
+        "Senja menutup hari dengan hangat—bahasa ini hidup kembali di mulut generasi baru."
+      ]
+    },
+    "legacy": {
+      "id": "legacy",
+      "title": "Menang – Warisan",
+      "image": "end_win",
+      "lines": [
+        "Hampir seluruh kata berhasil kamu selamatkan sebelum tenaga Nenek habis.",
+        "Anak-anak desa duduk melingkar di teras, mengulang kata-kata yang telah kamu catat di buku kosakata.",
+        "Nenek Wati tersenyum lega. Cerita sore ini akan terus berlanjut esok hari."
+      ]
+    },
+    "thin": {
+      "id": "thin",
+      "title": "Menang – Warisan Tipis",
+      "image": "end_win",
+      "lines": [
+        "Lima belas kata lebih berhasil tercatat di detik-detik terakhir senja.",
+        "Beberapa kata memang sempat tertinggal, tetapi anak-anak desa sudah mulai menirukan tutur Nenek Wati dengan penuh rasa ingin tahu.",
+        "Masih ada benih bahasa yang terselamatkan malam ini."
+      ]
+    },
+    "lose": {
+      "id": "lose",
+      "title": "Kalah – Senyap",
+      "image": "end_lose",
+      "lines": [
+        "Lampu pelita berkedip pelan di pelataran yang mulai gelap.",
+        "Nenek Wati terlelap kelelahan sebelum cukup banyak kata sempat dicatat. Sebagian tutur itu ikut tertidur dalam sunyi malam.",
+        "Tapi sore masih bisa diulang. Dengarkan kembali ceritanya dengan lebih saksama."
+      ]
+    }
+  }
+}

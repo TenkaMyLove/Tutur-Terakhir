@@ -1,0 +1,224 @@
+{
+  "words": [
+    {
+      "id": "w01",
+      "form": "pelataran",
+      "meaning": "teras rumah",
+      "distractors": ["halaman belakang", "ruang tamu", "jembatan kayu"],
+      "category": "benda",
+      "visualClue": "Nenek menunjuk lantai papan di depan pintu rumah panggung",
+      "narrativeClue": "Disebut saat duduk di depan rumah dan saat angin sore bertiup",
+      "icon": "icon_pelataran",
+      "difficulty": 1
+    },
+    {
+      "id": "w02",
+      "form": "basasimpun",
+      "meaning": "merapikan ruangan",
+      "distractors": ["menyapu halaman", "mencuci piring", "menjemur pakaian"],
+      "category": "tindakan",
+      "visualClue": "Nenek menata barang-barang di sudut teras dengan tangannya",
+      "narrativeClue": "Disebut saat menyambut tamu dan membereskan cangkir di sore hari",
+      "icon": "icon_basasimpun",
+      "difficulty": 1
+    },
+    {
+      "id": "w03",
+      "form": "rinjing",
+      "meaning": "penggorengan / wajan",
+      "distractors": ["panci kukus", "kendi air", "tungku kayu"],
+      "category": "benda",
+      "visualClue": "Ikon wajan hitam bulat di atas api dapur",
+      "narrativeClue": "Disebut saat minyak panas berdesis dan saat memasak ikan",
+      "icon": "icon_rinjing",
+      "difficulty": 1
+    },
+    {
+      "id": "w04",
+      "form": "maharu",
+      "meaning": "mengaduk masakan",
+      "distractors": ["memotong sayur", "mencuci beras", "menyalakan api"],
+      "category": "tindakan",
+      "visualClue": "Gestur tangan Nenek memutar sendok di atas wajan",
+      "narrativeClue": "Disebut saat memasak kuah santan dan agar bumbu tidak gosong",
+      "icon": "icon_maharu",
+      "difficulty": 1
+    },
+    {
+      "id": "w05",
+      "form": "panai",
+      "meaning": "cobek",
+      "distractors": ["talenan kayu", "parutan kelapa", "saringan teh"],
+      "category": "benda",
+      "visualClue": "Ikon wadah batu bundar tempat menghaluskan cabai dan bawang",
+      "narrativeClue": "Disebut saat menyiapkan sambal dan bumbu ikan",
+      "icon": "icon_panai",
+      "difficulty": 1
+    },
+    {
+      "id": "w06",
+      "form": "mamirik",
+      "meaning": "mengulek bumbu",
+      "distractors": ["mengiris bawang", "menumbuk padi", "mengupas buah"],
+      "category": "tindakan",
+      "visualClue": "Gestur Nenek menekan dan memutar ulekan di atas batu",
+      "narrativeClue": "Disebut bersama bawang, cabai, dan suara batu beradu",
+      "icon": "icon_mamirik",
+      "difficulty": 2
+    },
+    {
+      "id": "w07",
+      "form": "cirat",
+      "meaning": "teko",
+      "distractors": ["gelas bambu", "mangkuk sup", "botol minyak"],
+      "category": "benda",
+      "visualClue": "Ikon wadah air bercerat panjang untuk menuang teh hangat",
+      "narrativeClue": "Disebut saat menuangkan teh ke cangkir dan saat air mendidih",
+      "icon": "icon_cirat",
+      "difficulty": 2
+    },
+    {
+      "id": "w08",
+      "form": "ulas tilam",
+      "meaning": "sprei",
+      "distractors": ["selimut tidur", "sarung bantal", "taplak meja"],
+      "category": "benda",
+      "visualClue": "Ikon kain alas yang dipasang menutupi permukaan kasur",
+      "narrativeClue": "Disebut saat merapikan tempat tidur dan mengganti kain penutup kasur",
+      "icon": "icon_ulas_tilam",
+      "difficulty": 2
+    },
+    {
+      "id": "w09",
+      "form": "tapih",
+      "meaning": "kain sarung wanita",
+      "distractors": ["selendang kepala", "baju kebaya", "sapu tangan"],
+      "category": "benda",
+      "visualClue": "Ikon kain sarung bermotif yang dililitkan di pinggang",
+      "narrativeClue": "Disebut saat menahan angin senja dan saat berdandan rapi",
+      "icon": "icon_tapih",
+      "difficulty": 2
+    },
+    {
+      "id": "w10",
+      "form": "nukar",
+      "meaning": "membeli",
+      "distractors": ["menukar barang", "meminjam uang", "menjual hasil"],
+      "category": "tindakan",
+      "visualClue": "Gestur Nenek mengulurkan uang receh ke pedagang perahu",
+      "narrativeClue": "Disebut saat berbelanja ikan dan kue di pasar sungai",
+      "icon": "icon_nukar",
+      "difficulty": 2
+    },
+    {
+      "id": "w11",
+      "form": "sabat",
+      "meaning": "rumput",
+      "distractors": ["lumpur sungai", "batu kerikil", "daun kering"],
+      "category": "alam",
+      "visualClue": "Ikon rumpun hijau liar yang tumbuh di tepi halaman",
+      "narrativeClue": "Disebut saat embun membasahi halaman dan saat disabit sore hari",
+      "icon": "icon_sabat",
+      "difficulty": 2
+    },
+    {
+      "id": "w12",
+      "form": "lading",
+      "meaning": "pisau",
+      "distractors": ["parang panjang", "gunting kain", "tombak ikan"],
+      "category": "benda",
+      "visualClue": "Ikon bilah logam tajam bergagang kayu untuk memotong di dapur",
+      "narrativeClue": "Disebut saat membersihkan sisik ikan dan menyiangi bahan masakan di talenan",
+      "icon": "icon_lading",
+      "difficulty": 2
+    },
+    {
+      "id": "w13",
+      "form": "haruan",
+      "meaning": "ikan gabus",
+      "distractors": ["udang sungai", "kepiting rawa", "belut sawah"],
+      "category": "alam",
+      "visualClue": "Ikon ikan air tawar bertubuh panjang khas rawa Kalimantan",
+      "narrativeClue": "Disebut saat memancing di rawa dan saat dimasak kuah kuning",
+      "icon": "icon_haruan",
+      "difficulty": 2
+    },
+    {
+      "id": "w14",
+      "form": "kadap",
+      "meaning": "gelap",
+      "distractors": ["dingin menusuk", "sunyi sepi", "berangin kencang"],
+      "category": "alam",
+      "visualClue": "Lampu pelita dinyalakan saat langit mulai kehilangan cahaya",
+      "narrativeClue": "Disebut saat matahari tenggelam dan lampu minyak harus dinyalakan",
+      "icon": "icon_kadap",
+      "difficulty": 2
+    },
+    {
+      "id": "w15",
+      "form": "kai",
+      "meaning": "kakek",
+      "distractors": ["paman tertua", "ayah kandung", "tetangga dekat"],
+      "category": "kerabat",
+      "visualClue": "Nenek menunjuk potret pria tua berpeci di samping dirinya",
+      "narrativeClue": "Disebut saat bercerita tentang almarhum suami Nenek yang mendayung perahu",
+      "icon": "icon_kai",
+      "difficulty": 2
+    },
+    {
+      "id": "w16",
+      "form": "acil",
+      "meaning": "bibi / tante",
+      "distractors": ["kakak perempuan", "sepupu jauh", "ibu mertua"],
+      "category": "kerabat",
+      "visualClue": "Nenek menunjuk foto adik perempuan ibu yang suka membuat kue",
+      "narrativeClue": "Disebut sebagai adik dari ibu yang selalu membawakan jajanan pasar",
+      "icon": "icon_acil",
+      "difficulty": 3
+    },
+    {
+      "id": "w17",
+      "form": "bahari",
+      "meaning": "zaman dulu",
+      "distractors": ["musim kemarau", "tepi lautan", "pagi buta"],
+      "category": "perasaan",
+      "visualClue": "Nenek menatap jauh ke langit sambil mengingat masa mudanya",
+      "narrativeClue": "Disebut saat membandingkan kampung puluhan tahun lalu dengan sekarang",
+      "icon": "icon_bahari",
+      "difficulty": 3
+    },
+    {
+      "id": "w18",
+      "form": "karindangan",
+      "meaning": "kerinduan",
+      "distractors": ["rasa bersalah", "kekhawatiran", "rasa bangga"],
+      "category": "perasaan",
+      "visualClue": "Nenek menyentuh dada dengan mata berkaca-kaca menatap jalan kosong",
+      "narrativeClue": "Disebut saat mengenang anak-anak yang merantau jauh dari kampung",
+      "icon": "icon_karindangan",
+      "difficulty": 3
+    },
+    {
+      "id": "w19",
+      "form": "mahadang",
+      "meaning": "menunggu",
+      "distractors": ["menghalangi jalan", "melupakan janji", "mengantar pulang"],
+      "category": "tindakan",
+      "visualClue": "Nenek duduk tenang menoleh ke arah jalan setapak menanti kedatangan",
+      "narrativeClue": "Disebut saat menanti perahu pulang dan menanti anak-anak desa datang",
+      "icon": "icon_mahadang",
+      "difficulty": 3
+    },
+    {
+      "id": "w20",
+      "form": "himung",
+      "meaning": "senang / gembira",
+      "distractors": ["terkejut kaget", "sedih mendalam", "malu hati"],
+      "category": "perasaan",
+      "visualClue": "Wajah Nenek tersenyum lebar dan matanya berbinar cerah",
+      "narrativeClue": "Disebut saat mendengar suara tawa anak-anak dan saat kata-kata tercatat",
+      "icon": "icon_himung",
+      "difficulty": 3
+    }
+  ]
+}
