@@ -16,7 +16,7 @@ func _ready() -> void:
 		GameState.ending_id = eid
 	var ending: Dictionary = GameData.get_ending(eid)
 	var is_win := eid != "lose"
-	_bg.texture = PixelArt.dusk_sky(Vector2i(480, 270), 0.25 if is_win else 0.85)
+	_bg.texture = PixelArt.dusk_sky(PixelArt.SKY_SIZE, 0.25 if is_win else 0.85)
 	_bg.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	_title.text = str(ending.get("title", "Selesai"))
 	_title.add_theme_color_override("font_color", Color("ffe29a") if is_win else Color("c8b0d0"))

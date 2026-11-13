@@ -4,7 +4,9 @@ extends Node2D
 ## Midway: anak memanjat pohon + ibu "Ehh awas kena tegugur".
 
 const WORLD_WIDTH := 1100.0
-const GROUND_Y := 210.0
+const GROUND_Y := 280.0
+const VIEW_W := 640.0 ## visible world width (1280 / camera zoom 2)
+const VIEW_H := 360.0
 const PLAYER_SPEED := 72.0
 const SPAWN_X := 1040.0
 const ARRIVE_X := 110.0
@@ -44,7 +46,7 @@ func _ready() -> void:
 	_btn_walk.visible = false
 	_player.position = Vector2(SPAWN_X, GROUND_Y)
 	_player.flip_h = true
-	_camera.position = Vector2(clampf(SPAWN_X, 240.0, WORLD_WIDTH - 240.0), 135.0)
+	_camera.position = Vector2(clampf(SPAWN_X, VIEW_W * 0.5, WORLD_WIDTH - VIEW_W * 0.5), VIEW_H * 0.5)
 	_camera.make_current()
 	GameState.paused = true
 	_tutorial.finished.connect(_on_tutorial_finished, CONNECT_ONE_SHOT)
@@ -54,7 +56,7 @@ func _ready() -> void:
 
 
 func _setup_world() -> void:
-	_bg.texture = PixelArt.approach_sky(Vector2i(int(WORLD_WIDTH), 270))
+	_bg.texture = PixelArt.approach_sky(PixelArt.APPROACH_SIZE)
 	_bg.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	_bg.centered = false
 	_bg.position = Vector2.ZERO
@@ -95,20 +97,20 @@ func _setup_world() -> void:
 	var sb := StyleBoxFlat.new()
 	sb.bg_color = Color(0.12, 0.08, 0.06, 0.96)
 	sb.border_color = Color(0.95, 0.78, 0.42, 1)
-	sb.set_border_width_all(1)
-	sb.set_corner_radius_all(4)
-	sb.content_margin_left = 8
-	sb.content_margin_right = 8
-	sb.content_margin_top = 4
-	sb.content_margin_bottom = 4
+	sb.set_border_width_all(2)
+	sb.set_corner_radius_all(6)
+	sb.content_margin_left = 16
+	sb.content_margin_right = 16
+	sb.content_margin_top = 8
+	sb.content_margin_bottom = 8
 	_bubble.add_theme_stylebox_override("panel", sb)
-	_bubble.custom_minimum_size = Vector2(168, 28)
+	_bubble.custom_minimum_size = Vector2(380, 60)
 	_bubble_label.text = "Ehh awas kena tegugur!"
 	_bubble_label.autowrap_mode = TextServer.AUTOWRAP_OFF
 	_bubble_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_bubble_label.add_theme_font_size_override("font_size", 10)
+	_bubble_label.add_theme_font_size_override("font_size", 22)
 	_bubble_label.add_theme_color_override("font_color", Color(1.0, 0.93, 0.8, 1.0))
-	_bubble_label.custom_minimum_size = Vector2(152, 16)
+	_bubble_label.custom_minimum_size = Vector2(340, 32)
 
 
 func _spawn_decor() -> void:
@@ -123,10 +125,10 @@ func _spawn_decor() -> void:
 		_decor.add_child(post)
 	for x in [280.0, 360.0, 740.0, 820.0]:
 		var bush := Sprite2D.new()
-		bush.texture = PixelArt.solid(Vector2i(18, 10), Color("2f6a32"))
+		bush.texture = PixelArt.bush_sprite()
 		bush.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 		bush.centered = true
-		bush.position = Vector2(x, GROUND_Y - 8)
+		bush.position = Vector2(x, GROUND_Y - 6)
 		_decor.add_child(bush)
 
 
@@ -157,7 +159,7 @@ func _process(delta: float) -> void:
 			_bubble.visible = false
 
 	if not _can_move or _arrived:
-		_camera.position.x = clampf(_player.position.x, 240.0, WORLD_WIDTH - 240.0)
+		_camera.position.x = clampf(_player.position.x, VIEW_W * 0.5, WORLD_WIDTH - VIEW_W * 0.5)
 		return
 
 	var dir := 0.0
@@ -176,7 +178,7 @@ func _process(delta: float) -> void:
 	else:
 		_player.texture = PixelArt.person_sprite("player", 0)
 
-	_camera.position = Vector2(clampf(_player.position.x, 240.0, WORLD_WIDTH - 240.0), 135.0)
+	_camera.position = Vector2(clampf(_player.position.x, VIEW_W * 0.5, WORLD_WIDTH - VIEW_W * 0.5), VIEW_H * 0.5)
 
 	if not _vignette_shown and _player.position.x <= VIGNETTE_X + 50.0:
 		_show_vignette()
@@ -199,16 +201,17 @@ func _show_vignette() -> void:
 func _update_bubble_pos() -> void:
 	# Center of mother sprite in canvas space → place bubble above head
 	var screen_pos := _mother.get_global_transform_with_canvas().origin
-	var half_h := 24.0
+	var zoom := _camera.zoom.y
+	var half_h := 24.0 * zoom
 	if _mother.texture:
-		half_h = float(_mother.texture.get_height()) * 0.5
+		half_h = float(_mother.texture.get_height()) * 0.5 * zoom
 	var bw := maxf(_bubble.size.x, _bubble.custom_minimum_size.x)
 	var bh := maxf(_bubble.size.y, _bubble.custom_minimum_size.y)
 	if bw < 8.0:
-		bw = 168.0
+		bw = 380.0
 	if bh < 8.0:
-		bh = 28.0
-	_bubble.position = screen_pos + Vector2(-bw * 0.5, -half_h - bh - 10.0)
+		bh = 60.0
+	_bubble.position = screen_pos + Vector2(-bw * 0.5, -half_h - bh - 12.0)
 
 
 func _arrive() -> void:

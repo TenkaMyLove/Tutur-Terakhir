@@ -24,6 +24,8 @@ func _ready() -> void:
 	for i in 4:
 		var btn := Button.new()
 		btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		btn.custom_minimum_size = Vector2(0, 52)
+		btn.add_theme_font_size_override("font_size", 22)
 		btn.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		btn.pressed.connect(_on_choice_pressed.bind(i))
 		_choices.add_child(btn)
@@ -155,10 +157,10 @@ func _style_panel(panel: PanelContainer) -> void:
 	var sb := StyleBoxFlat.new()
 	sb.bg_color = Color(0.18, 0.12, 0.08, 0.96)
 	sb.border_color = Color(0.85, 0.65, 0.35, 1)
-	sb.set_border_width_all(2)
-	sb.set_corner_radius_all(3)
-	sb.content_margin_left = 6
-	sb.content_margin_right = 6
-	sb.content_margin_top = 4
-	sb.content_margin_bottom = 4
+	sb.set_border_width_all(3)
+	sb.set_corner_radius_all(6)
+	sb.content_margin_left = 12
+	sb.content_margin_right = 12
+	sb.content_margin_top = 8
+	sb.content_margin_bottom = 8
 	panel.add_theme_stylebox_override("panel", sb)

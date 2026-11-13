@@ -1,5 +1,10 @@
-; Engine configuration file for Melestarikan: Tutur Terakhir
-; Godot 4.5 · GL Compatibility · Desktop Web (HTML5) / itch.io
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
 
 config_version=5
 
@@ -18,16 +23,19 @@ GameData="*res://scripts/autoload/GameData.gd"
 SaveManager="*res://scripts/autoload/SaveManager.gd"
 AudioManager="*res://scripts/autoload/AudioManager.gd"
 GameState="*res://scripts/autoload/GameState.gd"
+UiTheme="*res://scripts/autoload/UiTheme.gd"
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=270
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/window_width_override=960
 window/size/window_height_override=540
 window/stretch/mode="viewport"
-window/stretch/aspect="keep"
-window/handheld/orientation=0
+
+[gui]
+
+timers/tooltip_delay_sec=0.3
 
 [input]
 
@@ -43,9 +51,3 @@ ui_accept={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-anti_aliasing/quality/msaa_2d=0
-anti_aliasing/quality/msaa_3d=0
-
-[gui]
-
-timers/tooltip_delay_sec=0.3

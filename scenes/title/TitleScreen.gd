@@ -12,7 +12,7 @@ extends Control
 
 
 func _ready() -> void:
-	_bg.texture = PixelArt.dusk_sky(Vector2i(480, 270), 0.15)
+	_bg.texture = PixelArt.dusk_sky(PixelArt.SKY_SIZE, 0.15)
 	_bg.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	_title.text = str(GameData.config.get("game", {}).get("title", "Tutur Terakhir"))
 	_subtitle.text = "Rekam tutur terakhir sebelum senja selesai"

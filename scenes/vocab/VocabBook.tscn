@@ -22,64 +22,67 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="PanelContainer" parent="Root"]
-custom_minimum_size = Vector2(440, 230)
+custom_minimum_size = Vector2(1080, 580)
 
 [node name="Margin" type="MarginContainer" parent="Root/Panel"]
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 6
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 6
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 18
 
 [node name="HBox" type="HBoxContainer" parent="Root/Panel/Margin"]
-theme_override_constants/separation = 8
+theme_override_constants/separation = 24
 
 [node name="Left" type="VBoxContainer" parent="Root/Panel/Margin/HBox"]
-custom_minimum_size = Vector2(170, 0)
+custom_minimum_size = Vector2(400, 0)
 size_flags_horizontal = 3
+theme_override_constants/separation = 8
 
 [node name="ListTitle" type="Label" parent="Root/Panel/Margin/HBox/Left"]
 text = "Buku Kosakata"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 28
+theme_override_colors/font_color = Color(1, 0.9, 0.7, 1)
 
 [node name="WordList" type="ItemList" parent="Root/Panel/Margin/HBox/Left"]
-custom_minimum_size = Vector2(0, 180)
+custom_minimum_size = Vector2(0, 440)
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 22
 
 [node name="Right" type="VBoxContainer" parent="Root/Panel/Margin/HBox"]
-custom_minimum_size = Vector2(230, 0)
+custom_minimum_size = Vector2(560, 0)
 size_flags_horizontal = 3
-theme_override_constants/separation = 3
+theme_override_constants/separation = 8
 
 [node name="IconRow" type="HBoxContainer" parent="Root/Panel/Margin/HBox/Right"]
 
 [node name="Icon" type="TextureRect" parent="Root/Panel/Margin/HBox/Right/IconRow"]
-custom_minimum_size = Vector2(24, 24)
+custom_minimum_size = Vector2(72, 72)
 expand_mode = 1
 stretch_mode = 5
 
 [node name="FormLabel" type="Label" parent="Root/Panel/Margin/HBox/Right"]
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 36
 theme_override_colors/font_color = Color(1, 0.9, 0.7, 1)
 text = "—"
 
 [node name="StatusLabel" type="Label" parent="Root/Panel/Margin/HBox/Right"]
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 22
 text = ""
 
 [node name="ClueLabel" type="Label" parent="Root/Panel/Margin/HBox/Right"]
-theme_override_font_sizes/font_size = 9
+theme_override_font_sizes/font_size = 20
 autowrap_mode = 3
 text = ""
 
 [node name="HintLabel" type="Label" parent="Root/Panel/Margin/HBox/Right"]
-theme_override_font_sizes/font_size = 9
+theme_override_font_sizes/font_size = 20
 theme_override_colors/font_color = Color(0.95, 0.8, 0.55, 1)
 autowrap_mode = 3
 text = ""
 
 [node name="Choices" type="VBoxContainer" parent="Root/Panel/Margin/HBox/Right"]
-theme_override_constants/separation = 2
+theme_override_constants/separation = 6
 
 [node name="CloseBtn" type="Button" parent="Root/Panel/Margin/HBox/Right"]
+custom_minimum_size = Vector2(0, 48)
 text = "Tutup buku"

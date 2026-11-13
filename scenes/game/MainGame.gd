@@ -15,7 +15,7 @@ const TYPEWRITER_CPS := 42.0
 @onready var _speaker: Label = $Dialog/Margin/VBox/Speaker
 @onready var _dialog_text: RichTextLabel = $Dialog/Margin/VBox/Text
 @onready var _dialog_hint: Label = $Dialog/Margin/VBox/Hint
-@onready var _questions: HBoxContainer = $Questions
+@onready var _questions: VBoxContainer = $Questions
 @onready var _quota: Label = $QuestionsHeader/Quota
 @onready var _btn_end: Button = $HUD/BtnEnd
 @onready var _mode_badge: Label = $HUD/ModeBadge
@@ -111,7 +111,7 @@ func _build_icons() -> void:
 	_icon_buttons.clear()
 	for wid in GameData.get_word_ids_for_mode(GameState.mode_id):
 		var btn := TextureButton.new()
-		btn.custom_minimum_size = Vector2(16, 16)
+		btn.custom_minimum_size = Vector2(48, 48)
 		btn.ignore_texture_size = true
 		btn.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 		btn.texture_normal = PixelArt.icon_for_word(wid, false)
@@ -129,8 +129,9 @@ func _build_question_buttons() -> void:
 		var btn := Button.new()
 		btn.text = str(q.get("label", "?"))
 		btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		btn.custom_minimum_size = Vector2(0, 22)
-		btn.add_theme_font_size_override("font_size", 9)
+		btn.custom_minimum_size = Vector2(0, 52)
+		btn.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		btn.add_theme_font_size_override("font_size", 18)
 		var qid: String = str(q.get("id", ""))
 		btn.pressed.connect(_on_question.bind(qid))
 		_questions.add_child(btn)
@@ -175,7 +176,7 @@ func _present_text(raw: String, parse_tags: bool) -> void:
 	_awaiting_advance = false
 	_dialog_hint.text = "Klik / Spasi untuk percepat"
 	var scale := SaveManager.text_scale()
-	_dialog_text.add_theme_font_size_override("normal_font_size", int(11 * scale))
+	_dialog_text.add_theme_font_size_override("normal_font_size", int(22 * scale))
 
 
 func _finish_typing() -> void:
@@ -356,7 +357,7 @@ func _refresh_sky(force: bool) -> void:
 	var max_e := float(GameData.config.get("energy", {}).get("max", 100))
 	var t := 1.0 - clampf(GameState.energy / max_e, 0.0, 1.0)
 	t = pow(t, 0.85)
-	_bg.texture = PixelArt.dusk_sky(Vector2i(480, 270), t)
+	_bg.texture = PixelArt.dusk_sky(PixelArt.SKY_SIZE, t)
 	if _fg_tint:
 		_fg_tint.color = Color(0.25, 0.1, 0.35, t * 0.22)
 
@@ -370,10 +371,10 @@ func _apply_panel_style(panel: PanelContainer) -> void:
 	var sb := StyleBoxFlat.new()
 	sb.bg_color = Color(0.16, 0.1, 0.08, 0.92)
 	sb.border_color = Color(0.72, 0.5, 0.28, 1)
-	sb.set_border_width_all(1)
-	sb.set_corner_radius_all(2)
-	sb.content_margin_left = 4
-	sb.content_margin_right = 4
-	sb.content_margin_top = 2
-	sb.content_margin_bottom = 2
+	sb.set_border_width_all(2)
+	sb.set_corner_radius_all(4)
+	sb.content_margin_left = 8
+	sb.content_margin_right = 8
+	sb.content_margin_top = 4
+	sb.content_margin_bottom = 4
 	panel.add_theme_stylebox_override("panel", sb)
